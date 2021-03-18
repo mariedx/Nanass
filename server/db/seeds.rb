@@ -13,3 +13,18 @@
     password_confirmation: 'azerty',
   )
 end
+
+puts "$" * 50
+puts "5 users created"
+
+5.times do |i|
+  current_id = i + 1
+  Customer.create(
+    user_id: current_id,
+    first_name: "Prénom#{current_id}",
+    last_name: "NOM#{current_id}",
+  )
+end
+
+puts "$" * 50
+puts "5 customers created"
