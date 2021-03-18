@@ -1,6 +1,7 @@
 class Api::UsersController < Api::BaseController
-
+  before_action :authenticate_user!
   before_action :find_user, only: [:show, :destroy]
+  before_action :render_if_not_author, only: [:show, :destroy]
 
   def index
     @users = User.all
@@ -21,6 +22,10 @@ class Api::UsersController < Api::BaseController
 
   private
 
+  def find_user
+    @user = User.find(params[:id])
+  end
+
   def destroy_success_data
     {
       status: "200",
@@ -28,7 +33,16 @@ class Api::UsersController < Api::BaseController
     }
   end
 
-  def find_user
-    @user = User.find(params[:id])
+  def render_if_not_author
+    unless current_user == @user
+      render json: not_author_data, status: 403
+    end
+  end
+
+  def not_author_data
+    {
+      status: "403",
+      error: "You are not the author of this profile!"
+    }
   end
 end
