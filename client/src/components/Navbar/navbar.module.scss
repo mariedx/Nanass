@@ -1,0 +1,45 @@
+$black: rgb(68, 67, 67);
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 50px 0px 00px;
+  align-items: center;
+  height: 80px;
+
+  ul {
+    list-style: none;
+  }
+
+
+
+  &__right {
+
+    li {
+      float: right;
+      justify-content: space-between;
+
+      a {
+        text-decoration: none;
+        background-image: linear-gradient($black, white);
+        background-position: 0% 90%;
+        background-repeat: no-repeat;
+        background-size: 0% 2px;
+        transition: background-size .3s;
+      }
+
+      a:hover, a:focus {
+          background-size: 100% 2px;
+      }
+    }
+  }
+
+  &__link {
+    width: 15%;
+    padding: 15px 10px;
+    margin: 5px;
+    color: $black;
+
+  }
+
+}
