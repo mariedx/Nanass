@@ -32,9 +32,6 @@ const FormSignup = () => {
 
   return (
     <div className={styles.FormSignup}>
-      <div className={styles.h1}>
-        <h1>Créer un compte</h1>
-      </div>
       <Input
         title="Email"
         type="registration"
@@ -57,7 +54,7 @@ const FormSignup = () => {
         placeholder="Nom"
       />
       <Input
-        title="Mot de Passe"
+        title="Mot de passe"
         type="registration"
         handleChange={handlePassword}
         value={passwordValue}
@@ -70,6 +67,7 @@ const FormSignup = () => {
         value={confirmPasswordValue}
         placeholder="Confirmation du mot de passe"
       />
+      <br />
       <br />
       <Button
         title="S'enregistrer"

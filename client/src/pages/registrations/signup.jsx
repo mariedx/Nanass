@@ -3,7 +3,7 @@ import FormSignup from 'components/FormSignup';
 import Layout from 'components/Layout';
 
 const Signup = () => (
-  <Layout title="Créer un compte" subtitle="Bienvenue chez Nanass !">
+  <Layout title="S'inscrire" subtitle="Bienvenue chez Nanass !">
     <div className="Signup">
       <FormSignup />
     </div>

@@ -11,8 +11,10 @@ const Input = (props) => {
   } = props;
 
   return (
-    <div className="Input">
-      <p className="Input__title">{title} :</p>
+    <div className={styles.Input}>
+      <p className={styles.Input__title}>
+        {title}
+      </p>
       <input
         className={classnames({
           [styles.search]: type === 'search',
