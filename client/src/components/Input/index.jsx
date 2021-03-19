@@ -12,7 +12,7 @@ const Input = (props) => {
 
   return (
     <div className="Input">
-      <p className="Input__title">{title}</p>
+      <p className="Input__title">{title} :</p>
       <input
         className={classnames({
           [styles.search]: type === 'search',
