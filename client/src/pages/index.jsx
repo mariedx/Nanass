@@ -1,13 +1,8 @@
-import Layout from '../components/Layout';
 import Input from 'components/Input';
+import Layout from '../components/Layout';
 
-
-const Home = ({ }) => {
-  return (
-    <Layout home>
-      <h1>Hello</h1>
-    </Layout>
-  );
-};
+const Home = ({ }) => (
+  <Layout home />
+);
 
 export default Home;
