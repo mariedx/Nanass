@@ -45,8 +45,13 @@ const Navbar = () => {
           {/* {currentUser.id && (
         <> */}
           <li>
-            <Link href="/profile">
-              <a className={styles.Navbar__link}>Profile</a>
+            <Link href="/concept">
+              <a className={styles.Navbar__link}> Notre concept</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/profil">
+              <a className={styles.Navbar__link}>Mon espace</a>
             </Link>
           </li>
 
