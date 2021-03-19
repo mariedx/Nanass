@@ -1,15 +1,22 @@
 import Navbar from 'components/Navbar';
 import styles from './layout.module.scss';
 
-const Layout = ({ children, home }) => (
+const Layout = ({
+  children, home, title, subtitle,
+}) => (
   <div className={styles.Layout}>
-    <Navbar />
     <main>
       {home && (
-        <h1 className="Layout__yesHome">ON EST À LA MAISON !!</h1>
+        <>
+          <Navbar />
+        </>
       )}
       {!home && (
-        <h1 className="Layout__notHome">ON N&apos;EST PAS À LA MAISON !!</h1>
+        <div className={styles.Header}>
+          <Navbar />
+          <h1 className={styles.Header__title}>{title}</h1>
+          <h2 className={styles.Header__subtitle}>{subtitle}</h2>
+        </div>
       )}
       {children}
     </main>
