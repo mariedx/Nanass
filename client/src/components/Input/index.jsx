@@ -1,15 +1,27 @@
-import cn from 'classnames';
+import classnames from 'classnames';
 import styles from './input.module.scss';
 
-const Input = ({children, type}) => {
+const Input = (props) => {
+  const {
+    type,
+    title,
+    handleChange,
+    placeholder,
+    value,
+  } = props;
+
   return (
-    <div>
-      <input className={cn({
-      [styles.search]: type === 'search',
-      [styles.registration]: type === 'registration'
-    })}
-     />
-      {children}
+    <div className="Input">
+      <p className="Input__title">{title}</p>
+      <input
+        className={classnames({
+          [styles.search]: type === 'search',
+          [styles.registration]: type === 'registration',
+        })}
+        onChange={handleChange}
+        placeholder={placeholder}
+        value={value}
+      />
     </div>
   );
 };
