@@ -9,9 +9,9 @@ import {
 
 const emptyState = {
   id: null,
-  email: '',
-  firstName: '',
-  lastName: '',
+  email: null,
+  firstName: undefined,
+  lastName: undefined,
 };
 
 const isTokenExpired = (token) => {
@@ -20,7 +20,7 @@ const isTokenExpired = (token) => {
   return (exp < now);
 };
 
-const setState = () => {
+const getInitialState = () => {
   const jwt = Cookies.get(config.COOKIE_STORAGE_KEY_USER);
   if (!jwt) return emptyState;
   if (isTokenExpired(jwt)) {
@@ -31,7 +31,7 @@ const setState = () => {
   return JSON.parse(localStorage.getItem(config.LOCAL_STORAGE_KEY_USER));
 };
 
-const initialState = setState();
+const initialState = getInitialState();
 
 const userReducer = (state = initialState, action) => {
   const { type } = action;
@@ -54,9 +54,9 @@ const userReducer = (state = initialState, action) => {
       const { payload } = action;
       const adminState = {
         ...state,
-        firstName: 'Admin',
-        lastName: 'Istrator',
         ...payload,
+        firstName: undefined,
+        lastName: undefined,
       };
       localStorage.setItem(config.LOCAL_STORAGE_KEY_USER, JSON.stringify(adminState));
 
