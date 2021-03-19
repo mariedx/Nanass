@@ -1,0 +1,30 @@
+.light {
+  background-color: white;
+	border-radius:8px;
+	border: 1px solid #61dfaa;
+	cursor:pointer;
+	color:#61dfaa;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+  
+  &:hover {
+    color:#4bd199;
+    border: 1px solid #4bd199;
+  }
+}
+
+.primary {
+  background-color:#61dfaa;
+	border-radius:8px;
+	border: none;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+  
+  &:hover {
+    background-color:#4bd199;
+  }
+}
