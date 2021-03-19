@@ -5,7 +5,6 @@ import styles from './navbar.module.scss';
 
 const Navbar = () => {
   const currentUser = 'hello';
-  console.log(currentUser);
   return (
     <nav className={styles.Navbar}>
       <ul>
@@ -52,12 +51,11 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a
-              className={styles.Navbar__link}
-              type="button"
-            >
-              Déconnexion
-            </a>
+            <Link href="/logout">
+              <a className={styles.Navbar__link}>
+                Déconnexion
+              </a>
+            </Link>
           </li>
           {/* </>
         )} */}
