@@ -1,5 +1,6 @@
 import config from 'config';
 import Cookies from 'js-cookie';
+import jwtDecode from 'jwt-decode';
 import {
   LOGIN_ADMIN,
   LOGIN_CUSTOMER,
@@ -13,7 +14,24 @@ const emptyState = {
   lastName: '',
 };
 
-const initialState = emptyState;
+const isTokenExpired = (token) => {
+  const { exp } = jwtDecode(token);
+  const now = Date.now() / 1000;
+  return (exp < now);
+};
+
+const setState = () => {
+  const jwt = Cookies.get(config.COOKIE_STORAGE_KEY_USER);
+  if (!jwt) return emptyState;
+  if (isTokenExpired(jwt)) {
+    Cookies.remove(config.COOKIE_STORAGE_KEY_USER);
+    localStorage.removeItem(config.LOCAL_STORAGE_KEY_USER);
+    return emptyState;
+  }
+  return JSON.parse(localStorage.getItem(config.LOCAL_STORAGE_KEY_USER));
+};
+
+const initialState = setState();
 
 const userReducer = (state = initialState, action) => {
   const { type } = action;
