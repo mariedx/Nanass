@@ -1,4 +1,3 @@
-import Jumbotron from 'components/Jumbotron';
 import Navbar from 'components/Navbar';
 import styles from './layout.module.scss';
 
@@ -7,7 +6,6 @@ const Layout = ({ children }) => (
     <Navbar />
     <main>
       {children}
-      <Jumbotron />
     </main>
   </div>
 );
