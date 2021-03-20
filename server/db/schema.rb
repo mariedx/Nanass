@@ -15,6 +15,27 @@ ActiveRecord::Schema.define(version: 2021_03_20_112242) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "is_billing_address", default: false, null: false
+    t.boolean "is_shipping_address", default: false, null: false
+    t.integer "number"
+    t.string "streetname"
+    t.string "complement"
+    t.string "zipcode"
+    t.string "city"
+    t.string "department"
+    t.string "region"
+    t.string "country"
+    t.string "phone"
+    t.bigint "customer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
+  end
+
   create_table "admins", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -50,5 +71,6 @@ ActiveRecord::Schema.define(version: 2021_03_20_112242) do
   end
 
   add_foreign_key "admins", "users"
+  add_foreign_key "addresses", "customers"
   add_foreign_key "customers", "users"
 end

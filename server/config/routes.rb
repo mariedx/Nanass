@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:index, :show, :destroy]
     resources :customers, except: [:destroy]
+    resources :addresses
     resources :admins, except: [:destroy]
-    end
+  end
 
   devise_for :users,
     defaults: { format: :json },
