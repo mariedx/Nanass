@@ -1,4 +1,6 @@
 class Api::AdminsController < Api::BaseController
+  before_action :authenticate_user!
+  before_action :render_if_not_admin
   before_action :set_admin, only: [:show, :update, :destroy]
 
   # GET /admins
