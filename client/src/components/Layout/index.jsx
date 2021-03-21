@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Navbar from 'components/Navbar';
 import styles from './layout.module.scss';
 
@@ -19,6 +20,9 @@ const Layout = ({
         </div>
       )}
       {children}
+      {!home && (
+        <Footer />
+      )}
     </main>
   </div>
 );

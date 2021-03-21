@@ -1,0 +1,24 @@
+.Socials {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+
+  }
+
+
+  &__iconelist {
+    padding: 10px;
+  }
+
+  &__icone {
+  filter: invert(25%) sepia(5%) saturate(20%) hue-rotate(340deg) brightness(92%) contrast(87%);
+
+  &:hover, &:focus {
+    filter: invert(70%) sepia(0%) saturate(0%) hue-rotate(174deg) brightness(89%) contrast(80%);}
+  }
+
+
+}
