@@ -1,5 +1,6 @@
 class Api::CustomersController < Api::BaseController
   before_action :authenticate_user!
+  before_action :render_if_not_admin, only: [:index]
   before_action :set_customer, only: [:show, :update]
   before_action :render_if_not_author, only: [:show, :update]
 

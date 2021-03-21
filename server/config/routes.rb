@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :destroy]
     resources :customers, except: [:destroy]
     resources :addresses
+    resources :admins, except: [:destroy]
   end
 
   devise_for :users,
