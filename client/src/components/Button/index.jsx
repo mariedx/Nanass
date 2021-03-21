@@ -1,10 +1,10 @@
+import React from 'react';
 import cn from 'classnames';
 import styles from './button.module.scss';
 
-export default function Button({ title, type }) {
-  return (
+const Button = React.forwardRef(({ title, type, href }) => (
+  <a href={href}>
     <button
-      href="#"
       type="button"
       className={cn({
         [styles.light]: type === 'light',
@@ -13,5 +13,7 @@ export default function Button({ title, type }) {
     >
       {title}
     </button>
-  );
-}
+  </a>
+));
+
+export default Button;

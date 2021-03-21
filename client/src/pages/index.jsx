@@ -1,4 +1,3 @@
-import Input from 'components/Input';
 import Jumbotron from 'components/Jumbotron';
 import Layout from 'components/Layout';
 
