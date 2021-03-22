@@ -11,6 +11,9 @@ class User < ApplicationRecord
   attribute :customer_id, :integer, default: :customer_id
   attribute :admin_id, :integer, default: :admin_id
 
+  after_create :welcome_send
+
+
   def customer?
     customer != nil
   end
@@ -26,4 +29,11 @@ class User < ApplicationRecord
   def admin_id
     return admin.id if admin?
   end
+
+  # MAILER
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 end
