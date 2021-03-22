@@ -13,7 +13,7 @@ const Footer = () => (
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/ressources/legalemention">
             Mentions légales
           </Link>
         </li>
