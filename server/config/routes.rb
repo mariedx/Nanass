@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :addresses
     resources :admins, except: [:destroy]
     resources :macbooks
-    resources :orders, except: [:update, :destroy]
+    resources :orders, except: [:destroy]
   end
 
   devise_for :users,
