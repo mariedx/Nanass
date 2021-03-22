@@ -17,10 +17,13 @@ const Jumbotron = () => (
         />
       </Link>
       {' '}
-      <Button
-        title="Vendre un Macbook"
-        type="light"
-      />
+      <Link href="/sell" passHref>
+        <Button
+          href="/sell"
+          title="Vendre un Macbook"
+          type="light"
+        />
+      </Link>
     </div>
     <footer className={styles.Footer}>
       <SocialNetworks />
