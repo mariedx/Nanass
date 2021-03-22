@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_125233) do
+ActiveRecord::Schema.define(version: 2021_03_22_150951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,18 @@ ActiveRecord::Schema.define(version: 2021_03_22_125233) do
     t.decimal "price", precision: 5, scale: 2
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.date "date"
+    t.string "status", default: "pending", null: false
+    t.string "tracking_number"
+    t.string "shipping_address"
+    t.string "billing_address"
+    t.bigint "customer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -92,4 +104,5 @@ ActiveRecord::Schema.define(version: 2021_03_22_125233) do
   add_foreign_key "addresses", "customers"
   add_foreign_key "admins", "users"
   add_foreign_key "customers", "users"
+  add_foreign_key "orders", "customers"
 end
