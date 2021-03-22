@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
-import styles from './navbar.module.scss';
 
 const Nav = styled.nav`
   padding: 20px 50px 20px 0px;
@@ -26,7 +25,19 @@ const Menu = styled.ul`
   }
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text), white);
+  background-position: 0% 90%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+  text-transform: uppercase;
+
+  li:hover {
+    background-size: 100% 2px;
+  }
+`;
 
 const NavIcon = styled.button`
   background: none;
@@ -45,7 +56,7 @@ const Line = styled.span`
   width: 25px;
   height: 3px;
   margin: 5px;
-  background-color: #fff;
+  background-color: var(--color-text);
   transition: width 0.4s ease-in-out;
 
   :nth-child(2) {
@@ -55,6 +66,7 @@ const Line = styled.span`
 
 const Overlay = styled.div`
   position: absolute;
+  background-color: white;
   height: ${(props) => (props.open ? '91vh' : 0)};
   width: 100vw;
   transition: height 0.4s ease-in-out;
@@ -96,7 +108,6 @@ const Navbar = () => {
               height={70}
               width={70}
               alt="Nanass"
-              className={styles.Navbar__logo}
             />
           </a>
         </Link>
