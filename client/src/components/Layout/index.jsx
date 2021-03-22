@@ -7,11 +7,7 @@ const Layout = ({
 }) => (
   <div className={styles.Layout}>
     <main>
-      {home && (
-        <>
-          <Navbar />
-        </>
-      )}
+      {home && <Navbar />}
       {!home && (
         <div className={styles.Header}>
           <Navbar />
