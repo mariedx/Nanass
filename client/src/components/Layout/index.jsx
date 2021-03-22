@@ -6,6 +6,7 @@ const Layout = ({
   children, home, title, subtitle,
 }) => (
   <div className={styles.Layout}>
+
     <main>
       {home && <Navbar />}
       {!home && (
@@ -16,10 +17,10 @@ const Layout = ({
         </div>
       )}
       {children}
-      {!home && (
-        <Footer />
-      )}
     </main>
+    {!home && (
+      <Footer />
+    )}
   </div>
 );
 
