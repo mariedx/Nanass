@@ -6,7 +6,7 @@ const LegaleMention = () => {
   return (
     <Layout title="Mentions Legales">
       <div className={styles.LegaleMention}>
-        <h1>Mentions Legales</h1>
+        <h2>Mentions Legales</h2>
       </div>
     </Layout>
   );

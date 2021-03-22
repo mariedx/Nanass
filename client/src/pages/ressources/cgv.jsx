@@ -6,7 +6,7 @@ const Cgv = () => {
   return (
     <Layout title="Conditions Generales de Vente">
       <div className={styles.Cgv}>
-        <h1>Conditions Generales de Vente</h1>
+        <h2>Conditions Generales de Vente</h2>
       </div>
     </Layout>
   );

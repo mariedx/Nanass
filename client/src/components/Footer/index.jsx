@@ -18,24 +18,19 @@ const Footer = () => (
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/ressources/avis">
             Vos avis
           </Link>
         </li>
       </ul>
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/ressources/confidentialpolitique">
             Politique de confidentialité
           </Link>
         </li>
         <li>
-          <Link href="/">
-            CGV
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
+          <Link href="/ressources/contact">
             Contact
           </Link>
         </li>
