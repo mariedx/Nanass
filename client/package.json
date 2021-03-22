@@ -9,12 +9,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-<<<<<<< HEAD
     "js-cookie": "^2.2.1",
     "jwt-decode": "^3.1.2",
-=======
     "classnames": "^2.2.6",
->>>>>>> develop
     "next": "10.0.9",
     "next-google-fonts": "^2.1.0",
     "react": "17.0.1",
