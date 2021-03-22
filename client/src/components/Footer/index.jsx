@@ -8,7 +8,7 @@ const Footer = () => (
     <div className={styles.FooterLinks}>
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/ressources/cgv">
             Conditions générales de vente
           </Link>
         </li>
