@@ -3,9 +3,9 @@ $black: rgb(68, 67, 67);
 .Navbar {
   display: flex;
   justify-content: space-between;
-  padding: 15px 50px 0px 00px;
+  padding: 20px 50px 20px 0px;
   align-items: center;
-  height: 80px;
+  height: 10vh;
 
   ul {
     list-style: none;
@@ -16,7 +16,7 @@ $black: rgb(68, 67, 67);
   &__right {
 
     li {
-      float: right;
+      float: left;
       justify-content: space-between;
 
       a {
@@ -26,6 +26,8 @@ $black: rgb(68, 67, 67);
         background-repeat: no-repeat;
         background-size: 0% 2px;
         transition: background-size .3s;
+        font-weight: bold;
+        text-transform: uppercase;
       }
 
       a:hover, a:focus {

@@ -1,9 +1,10 @@
-import Layout from '../components/Layout/layout';
+import Jumbotron from 'components/Jumbotron';
+import Layout from 'components/Layout';
 
-export default function Home() {
-  return (
-    <Layout home>
-      <h2>Hello</h2>
-    </Layout>
-  );
-}
+const Home = () => (
+  <Layout home>
+    <Jumbotron />
+  </Layout>
+);
+
+export default Home;

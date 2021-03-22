@@ -6,9 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(
+  email: "admin1@yopmail.com",
+  password: 'azerty',
+  password_confirmation: 'azerty',
+)
+
+Admin.create(
+  user_id: 1,
+)
+
+puts "$" * 50
+puts "An admin was created"
+
 5.times do |i|
   User.create(
-    email: "tst#{i + 1}@tst.tst",
+    email: "prenomnom#{i + 1}@yopmail.com",
     password: 'azerty',
     password_confirmation: 'azerty',
   )
@@ -18,11 +31,12 @@ puts "$" * 50
 puts "5 users created"
 
 5.times do |i|
-  current_id = i + 1
+  first_customer_user_id = 2
+  current_index = i + 1
   Customer.create(
-    user_id: current_id,
-    first_name: "Prénom#{current_id}",
-    last_name: "NOM#{current_id}",
+    user_id: first_customer_user_id + i,
+    first_name: "Prénom#{current_index}",
+    last_name: "NOM#{current_index}",
   )
 end
 

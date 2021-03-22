@@ -1,7 +1,8 @@
 class Api::UsersController < Api::BaseController
   before_action :authenticate_user!
+  before_action :render_if_not_admin, only: [:index]
   before_action :find_user, only: [:show, :destroy]
-  before_action :render_if_not_author, only: [:show, :destroy]
+  before_action :render_if_not_author_or_admin, only: [:show, :destroy]
 
   def index
     @users = User.all
@@ -33,8 +34,8 @@ class Api::UsersController < Api::BaseController
     }
   end
 
-  def render_if_not_author
-    unless current_user == @user
+  def render_if_not_author_or_admin
+    unless current_user == @user || current_user.admin?
       render json: not_author_data, status: 403
     end
   end

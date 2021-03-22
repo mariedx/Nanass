@@ -1,5 +1,6 @@
 class Customer < ApplicationRecord
   belongs_to :user
+  has_many :addresses
 
   attribute :email, :string, default: :email
 
