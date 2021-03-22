@@ -10,9 +10,6 @@
   text-align: center;
   width: 100%;
   height: 32vh;
-  top:0;
-  left:0;
-  z-index: -1;
   margin-bottom: 0px;
 
   &__title {
@@ -24,5 +21,8 @@
 
   &__subtitle {
     color: white;
+    font-family: 'Lato';
+    font-size: 1.75em;
+
   }
 }
