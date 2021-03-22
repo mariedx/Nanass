@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_112242) do
+ActiveRecord::Schema.define(version: 2021_03_21_175940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,24 @@ ActiveRecord::Schema.define(version: 2021_03_20_112242) do
     t.index ["jti"], name: "index_jwt_denylist_on_jti"
   end
 
+  create_table "macbooks", force: :cascade do |t|
+    t.string "model"
+    t.integer "year"
+    t.string "processor"
+    t.integer "size"
+    t.string "ghz"
+    t.integer "ram"
+    t.integer "memory"
+    t.integer "battery"
+    t.string "color"
+    t.string "keyboard"
+    t.string "serial_number"
+    t.boolean "is_camera_working"
+    t.string "image_url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -70,7 +88,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_112242) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "admins", "users"
   add_foreign_key "addresses", "customers"
+  add_foreign_key "admins", "users"
   add_foreign_key "customers", "users"
 end
