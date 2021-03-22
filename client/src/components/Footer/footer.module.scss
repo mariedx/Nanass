@@ -1,0 +1,32 @@
+.Footer {
+  width:100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.FooterLinks {
+
+  color: rgb(68, 67, 67);
+  font-style: italic;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0px 20px 0px 20px;
+
+
+  }
+
+  li {
+
+    text-align: left;
+    padding: 5px;
+
+    &:hover {
+      color: rgb(158, 157, 157);
+    }
+  }
+
+}

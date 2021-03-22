@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'components/Button';
+import SocialNetworks from 'components/SocialNetworks';
 import Link from 'next/link';
 import styles from './jumbotron.module.scss';
 
@@ -21,6 +22,9 @@ const Jumbotron = () => (
         type="light"
       />
     </div>
+    <footer className={styles.Footer}>
+      <SocialNetworks />
+    </footer>
   </div>
 );
 
