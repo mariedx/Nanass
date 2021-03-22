@@ -15,6 +15,10 @@ const Signin = () => {
     setPasswordValue(e.target.value);
   };
 
+  const handleSubmit = () => {
+    // Fetch logic
+  };
+
   return (
     <div className={styles.FormSignIn}>
       <Input
@@ -24,7 +28,7 @@ const Signin = () => {
         value={emailValue}
         placeholder="Email"
       />
-       <Input
+      <Input
         title="Mot de passe"
         type="registration"
         handleChange={handlePassword}
@@ -36,6 +40,7 @@ const Signin = () => {
       <Button
         title="S'enregistrer"
         type="primary"
+        handleClick={handleSubmit}
       />
     </div>
   );
