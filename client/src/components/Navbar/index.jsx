@@ -3,32 +3,30 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './navbar.module.scss';
 
-const Navbar = () => {
-  const currentUser = 'hello';
-  return (
-    <nav className={styles.Navbar}>
-      <ul>
-        <li>
-          <Link href="/">
-            <a>
-              <Image
-                priority
-                src="/images/logo.svg"
-                height={70}
-                width={70}
-                alt="Nanass"
-                className={styles.Navbar__logo}
-              />
-            </a>
-          </Link>
-        </li>
-      </ul>
+const Navbar = () => (
+  <nav className={styles.Navbar}>
+    <ul>
+      <li>
+        <Link href="/">
+          <a>
+            <Image
+              priority
+              src="/images/logo.svg"
+              height={70}
+              width={70}
+              alt="Nanass"
+              className={styles.Navbar__logo}
+            />
+          </a>
+        </Link>
+      </li>
+    </ul>
 
-      <div className={styles.Navbar__right}>
-        {/* {!currentUser.id && (
+    <div className={styles.Navbar__right}>
+      {/* {!currentUser.id && (
         <> */}
-        <ul>
-          {/* <li>
+      <ul>
+        {/* <li>
             <Link href="/log-in">
               <a className={styles.Navbar__link}>Connexion</a>
             </Link>
@@ -39,35 +37,34 @@ const Navbar = () => {
             </Link>
 
           </li> */}
-          {/* </>
+        {/* </>
         )} */}
 
-          {/* {currentUser.id && (
+        {/* {currentUser.id && (
         <> */}
-          <li>
-            <Link href="/concept">
-              <a className={styles.Navbar__link}> Notre concept</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/profil">
-              <a className={styles.Navbar__link}>Mon espace</a>
-            </Link>
-          </li>
+        <li>
+          <Link href="/concept">
+            <a className={styles.Navbar__link}> Notre concept</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/profil">
+            <a className={styles.Navbar__link}>Mon espace</a>
+          </Link>
+        </li>
 
-          <li>
-            <Link href="/logout">
-              <a className={styles.Navbar__link}>
-                Déconnexion
-              </a>
-            </Link>
-          </li>
-          {/* </>
+        <li>
+          <Link href="/logout">
+            <a className={styles.Navbar__link}>
+              Déconnexion
+            </a>
+          </Link>
+        </li>
+        {/* </>
         )} */}
-        </ul>
-      </div>
-    </nav>
-  );
-};
+      </ul>
+    </div>
+  </nav>
+);
 
 export default Navbar;
