@@ -1,3 +1,6 @@
 class Macbook < ApplicationRecord
-  validates_presence_of :model, :year, :processor, :size, :ghz, :ram, :memory, :battery, :color, :keyboard, :serial_number, :image_url, :is_camera_working, :price
+  validates_presence_of :model, :year, :processor, :size, :ghz, :ram, :memory, :battery, :color, :keyboard, :serial_number, :image_url, :price
+
+  validates :is_camera_working, inclusion: { in: [ true, false ] }
+
 end

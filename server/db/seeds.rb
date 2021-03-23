@@ -19,7 +19,7 @@ Admin.create(
 puts "$" * 50
 puts "An admin was created"
 
-5.times do |i|
+10.times do |i|
   User.create(
     email: "prenomnom#{i + 1}@yopmail.com",
     password: 'azerty',
@@ -28,9 +28,9 @@ puts "An admin was created"
 end
 
 puts "$" * 50
-puts "5 users created"
+puts "10 users created"
 
-5.times do |i|
+10.times do |i|
   first_customer_user_id = 2
   current_index = i + 1
   Customer.create(
@@ -41,9 +41,9 @@ puts "5 users created"
 end
 
 puts "$" * 50
-puts "5 customers created"
+puts "10 customers created"
 
-5.times do |i|
+Customer.all.count.times do |i|
   Address.create(
 		name: ["Adresse 1", "maison", "bureau"].sample,
 		first_name: ["Marie", "Clémentine", "Maxime", "Coline", "Benjamin"].sample,
@@ -64,9 +64,9 @@ puts "5 customers created"
 end
 
 puts "$" * 50
-puts "5 addresses created"
+puts "10 addresses created"
 
-5.times do |i|
+10.times do |i|
   Macbook.create(
     model: ["Macbook Pro", "Macbook Air"].sample,
     year: [2013, 2014, 2015, 2016, 2017, 2018].sample,
@@ -86,9 +86,9 @@ puts "5 addresses created"
 end
 
 puts "$" * 50
-puts "5 macbooks created"
+puts "10 macbooks created"
 
-5.times do |i|
+10.times do |i|
   Order.create(
     status: ["sent", "payed", "pending"].sample,
 		customer_id: i + 1,
@@ -100,4 +100,4 @@ puts "5 macbooks created"
 end
 
 puts "$" * 50
-puts "5 orders created"
+puts "10 orders created"
