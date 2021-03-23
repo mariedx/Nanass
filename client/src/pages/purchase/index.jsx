@@ -1,17 +1,15 @@
 import CardMacBook from 'components/CardMacBook';
 import Layout from 'components/Layout';
+import SearchBar from 'components/SearchBar';
 import styles from './purchaseMacBook.module.scss';
 
 const purchase = () => (
   <Layout title="ACHETER UN MACBOOK" subtitle="Tous nos produits sont garantis 12 mois !">
-    <div className={styles.purchase}>
-      <div className={styles.purchase__sidebar}>
-        <p>Année de sortie</p>
-        <p>Aspect</p>
-        <p>Mémoire</p>
-        <p>Taille écran</p>
+    <div className={styles.Purchase}>
+      <div className={styles.Purchase__searchbar}>
+        <SearchBar />
       </div>
-      <div className={styles.purchase__content}>
+      <div className={styles.Purchase__content}>
         <CardMacBook />
       </div>
     </div>
