@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :admins, except: [:destroy]
     resources :macbooks
     resources :orders, except: [:destroy]
+    post '/presigned_url', to: 'direct_upload#create'
   end
 
   devise_for :users,

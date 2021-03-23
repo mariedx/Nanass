@@ -47,6 +47,6 @@ class Api::MacbooksController < Api::BaseController
 
     # Only allow a list of trusted parameters through.
     def macbook_params
-      params.require(:macbook).permit(:model, :year, :processor, :size, :ghz, :ram, :memory, :battery, :color, :keyboard, :serial_number, :image_url, :is_camera_working, :price)
+      params.require(:macbook).permit(:model, :year, :processor, :size, :ghz, :ram, :memory, :battery, :color, :keyboard, :serial_number, :is_camera_working, :price, :image)
     end
 end
