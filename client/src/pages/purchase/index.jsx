@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import ApiMacbooks from 'api/macbooks';
 import CardMacBook from 'components/CardMacBook';
@@ -58,7 +59,7 @@ const purchase = () => {
                 processor,
                 ram,
                 price,
-                serial_number
+                serial_number,
               } = macbook;
               return (
                 <CardMacBook
