@@ -1,15 +1,18 @@
+import React from 'react';
 import Button from 'components/Button';
-import Layout from 'components/Layout';
 import Link from 'next/link';
-import styles from './product_page.module.scss';
+import styles from './macbookshow.module.scss';
 
-const product = () => (
-
-  <Layout title="trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
-    <div className={styles.Product}>
-      <img className={styles.Product__image} src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
-      <div className={styles.Product__lists}>
-        <ul className={styles.Product__lists__criteria}>
+const MacBookShow = (
+  {
+    model, size, year, processor, ram, aspect, price,
+  },
+) => (
+  <>
+    <div className={styles.MacBookShow}>
+      <img className={styles.MacBookShow__image} src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
+      <div className={styles.MacBookShow__lists}>
+        <ul className={styles.MacBookShow__lists__criteria}>
           <li>
             Modèle
           </li>
@@ -32,32 +35,35 @@ const product = () => (
             Prix
           </li>
         </ul>
-        <ul className={styles.Product__lists__data}>
+        <ul className={styles.MacBookShow__lists__data}>
           <li>
-            Modèle
+            {model}
           </li>
           <li>
-            Taille de l&apos;écran
+            {size}
+            &apos;
           </li>
           <li>
-            Année de sortie
+            {year}
           </li>
           <li>
-            Processor
+            {processor}
           </li>
           <li>
-            RAM
+            {ram}
           </li>
           <li>
-            État
+            {aspect}
           </li>
           <li>
-            Prix
+            {price}
+            {' '}
+            €
           </li>
         </ul>
       </div>
     </div>
-    <div className={styles.Product__button}>
+    <div className={styles.MacBookShow__button}>
       <Link href="/purchase" passHref>
         <Button
           href="/purchase"
@@ -66,8 +72,7 @@ const product = () => (
         />
       </Link>
     </div>
-  </Layout>
-
+  </>
 );
 
-export default product;
+export default MacBookShow;
