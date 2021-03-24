@@ -1,0 +1,11 @@
+.Applications {
+  margin-top: 50px;
+  text-align: center;
+
+  &__title {
+    margin: 3% 0;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.2rem;
+  }
+}
