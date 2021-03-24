@@ -14,8 +14,9 @@ const loginCustomer = (customer, token) => {
   const {
     id,
     email,
-    first_name,
-    last_name,
+    firstName,
+    lastName,
+    customerId,
   } = customer;
 
   return {
@@ -23,8 +24,9 @@ const loginCustomer = (customer, token) => {
     payload: {
       id,
       email,
-      firstName: first_name,
-      lastName: last_name,
+      firstName,
+      lastName,
+      customerId,
     },
     token,
   };
@@ -34,6 +36,7 @@ const loginAdmin = (admin, token) => {
   const {
     id,
     email,
+    adminId,
   } = admin;
 
   return {
@@ -41,6 +44,7 @@ const loginAdmin = (admin, token) => {
     payload: {
       id,
       email,
+      adminId,
     },
     token,
   };

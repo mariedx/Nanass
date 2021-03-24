@@ -1,6 +1,6 @@
-import config from 'config';
 import Cookies from 'js-cookie';
-import jwtDecode from 'jwt-decode';
+import isJwtExpired from 'utils/jwt';
+import config from 'config';
 import {
   LOGIN_ADMIN,
   LOGIN_CUSTOMER,
@@ -12,23 +12,19 @@ const emptyState = {
   email: null,
   firstName: undefined,
   lastName: undefined,
-};
-
-const isTokenExpired = (token) => {
-  const { exp } = jwtDecode(token);
-  const now = Date.now() / 1000;
-  return (exp < now);
+  adminId: undefined,
+  customerId: undefined,
 };
 
 const getInitialState = () => {
-  const jwt = Cookies.get(config.COOKIE_STORAGE_KEY_USER);
+  const jwt = Cookies.get(config.COOKIE_STORAGE_KEY_USER_TOKEN);
   if (!jwt) return emptyState;
-  if (isTokenExpired(jwt)) {
-    Cookies.remove(config.COOKIE_STORAGE_KEY_USER);
-    localStorage.removeItem(config.LOCAL_STORAGE_KEY_USER);
+  if (isJwtExpired(jwt)) {
+    Cookies.remove(config.COOKIE_STORAGE_KEY_USER_TOKEN);
+    Cookies.remove(config.COOKIE_STORAGE_KEY_USER_DATA);
     return emptyState;
   }
-  return JSON.parse(localStorage.getItem(config.LOCAL_STORAGE_KEY_USER));
+  return JSON.parse(Cookies.get(config.COOKIE_STORAGE_KEY_USER_DATA));
 };
 
 const initialState = getInitialState();
@@ -39,9 +35,9 @@ const userReducer = (state = initialState, action) => {
   switch (type) {
     case LOGIN_CUSTOMER: {
       const { token } = action;
-      Cookies.set(config.COOKIE_STORAGE_KEY_USER, token);
+      Cookies.set(config.COOKIE_STORAGE_KEY_USER_TOKEN, token);
       const { payload } = action;
-      localStorage.setItem(config.LOCAL_STORAGE_KEY_USER, JSON.stringify(payload));
+      Cookies.set(config.COOKIE_STORAGE_KEY_USER_DATA, JSON.stringify(payload));
 
       return {
         ...state,
@@ -50,7 +46,7 @@ const userReducer = (state = initialState, action) => {
     }
     case LOGIN_ADMIN: {
       const { token } = action;
-      Cookies.set(config.COOKIE_STORAGE_KEY_USER, token);
+      Cookies.set(config.COOKIE_STORAGE_KEY_USER_TOKEN, token);
       const { payload } = action;
       const adminState = {
         ...state,
@@ -58,15 +54,15 @@ const userReducer = (state = initialState, action) => {
         firstName: undefined,
         lastName: undefined,
       };
-      localStorage.setItem(config.LOCAL_STORAGE_KEY_USER, JSON.stringify(adminState));
+      Cookies.set(config.COOKIE_STORAGE_KEY_USER_DATA, JSON.stringify(adminState));
 
       return {
         ...adminState,
       };
     }
     case LOG_OUT: {
-      Cookies.remove(config.COOKIE_STORAGE_KEY_USER);
-      localStorage.removeItem(config.LOCAL_STORAGE_KEY_USER);
+      Cookies.remove(config.COOKIE_STORAGE_KEY_USER_TOKEN);
+      Cookies.remove(config.COOKIE_STORAGE_KEY_USER_DATA);
       return {
         ...emptyState,
       };
@@ -77,3 +73,4 @@ const userReducer = (state = initialState, action) => {
 };
 
 export default userReducer;
+export { initialState };
