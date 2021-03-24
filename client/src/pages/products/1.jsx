@@ -1,73 +1,41 @@
-import Button from 'components/Button';
+import { useState, useEffect } from 'react';
+import ApiMacbooks from 'api/macbooks';
 import Layout from 'components/Layout';
-import Link from 'next/link';
-import styles from './product_page.module.scss';
+import MacBookShow from 'components/MacBookShow';
+// import styles from './product_page.module.scss';
 
-const product = () => (
+const product = () => {
+  const [errorMessage, setErrorMessage] = useState('');
+  const [TheMacbook, setTheMacbook] = useState({});
 
-  <Layout title="trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
-    <div className={styles.Product}>
-      <img className={styles.Product__image} src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
-      <div className={styles.Product__lists}>
-        <ul className={styles.Product__lists__criteria}>
-          <li>
-            Modèle
-          </li>
-          <li>
-            Taille de l&apos;écran
-          </li>
-          <li>
-            Année de sortie
-          </li>
-          <li>
-            Processor
-          </li>
-          <li>
-            RAM
-          </li>
-          <li>
-            État
-          </li>
-          <li>
-            Prix
-          </li>
-        </ul>
-        <ul className={styles.Product__lists__data}>
-          <li>
-            Modèle
-          </li>
-          <li>
-            Taille de l&apos;écran
-          </li>
-          <li>
-            Année de sortie
-          </li>
-          <li>
-            Processor
-          </li>
-          <li>
-            RAM
-          </li>
-          <li>
-            État
-          </li>
-          <li>
-            Prix
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div className={styles.Product__button}>
-      <Link href="/purchase" passHref>
-        <Button
-          href="/purchase"
-          title="Ajouter au panier"
-          type="primary"
-        />
-      </Link>
-    </div>
-  </Layout>
+  useEffect(async () => {
+    if (errorMessage !== '') {
+      setErrorMessage('');
+    }
 
-);
+    const result = await ApiMacbooks.getOneMacbook('1');
+
+    if (result.error) {
+      setErrorMessage(result.error.message);
+      return;
+    }
+    setTheMacbook(result);
+  }, []);
+  return (
+    <Layout title="trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
+      <MacBookShow
+        model={TheMacbook.model}
+        size={TheMacbook.size}
+        year={TheMacbook.year}
+        processor={TheMacbook.processor}
+        ram={TheMacbook.ram}
+        aspect={TheMacbook.aspect}
+        price={TheMacbook.price}
+      />
+    </Layout>
+  );
+};
+
+https://stackoverflow.com/questions/63602771/next-js-9-3-and-catch-all-routes
 
 export default product;
