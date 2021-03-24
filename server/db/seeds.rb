@@ -69,7 +69,7 @@ puts "10 addresses created"
 10.times do |i|
   Macbook.create(
     model: ["Macbook Pro", "Macbook Air"].sample,
-    year: [2013, 2014, 2015, 2016, 2017, 2018].sample,
+    year: ["Mid 2013", "Mid 2014", "Early 2015", "End 2016", "End 2017", "Early 2018"].sample,
     processor: ["i3", "i5", "i7"].sample,
     size: [11, 12, 13, 15, 16].sample,
     ghz: ["1.1", "1.2", "2.7", "3.1", "1.6"].sample,
@@ -82,6 +82,7 @@ puts "10 addresses created"
     is_camera_working: [true, false].sample,
     image_url: ["https://www.pexels.com/fr-fr/photo/cafe-tasse-ordinateur-portable-internet-4050325/", "https://www.pexels.com/fr-fr/photo/ordinateur-portable-lit-chambre-a-coucher-animal-4297820/", "https://www.pexels.com/fr-fr/photo/bois-magazines-ordinateur-portable-maison-4050318/", "https://www.pexels.com/fr-fr/photo/bras-femme-ordinateur-portable-naviguer-4050334/", "https://www.pexels.com/fr-fr/photo/personne-mains-bureau-ordinateur-portable-4065617/"].sample,
     price: [470, 510, 575, 680, 435].sample,
+    aspect: ["Fair", "Good", "Very Good", "As New"].sample,
   )
 end
 
