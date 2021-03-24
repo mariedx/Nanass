@@ -1,5 +1,8 @@
 class Api::OrderMacbooksController < Api::BaseController
+  before_action :authenticate_user!
   before_action :set_order_macbook, only: [:show, :update, :destroy]
+  before_action :render_if_not_admin, only: [:create, :index, :update]
+  before_action :render_if_not_author_or_admin, only: [:show]
 
   # GET /order_macbooks
   def index
