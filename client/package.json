@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "next": "10.0.9",
     "next-google-fonts": "^2.1.0",

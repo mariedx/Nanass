@@ -1,4 +1,15 @@
 .Purchase {
   margin-top: 50px;
   text-align: center;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &__errorMessage {
+    color: red;
+    font-style: italic;
+  }
 }
