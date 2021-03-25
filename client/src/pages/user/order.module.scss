@@ -1,5 +1,3 @@
-
-
 @mixin mobile {
   @media (max-width: 800px) {
     @content;
@@ -11,15 +9,10 @@
   flex-direction: row;
   margin-left: 100px;
 
-  
-  
   @include mobile{
     flex-direction: column;
   }
 
-  &__sidebar{
-    margin-left: 10px;
-  }
   &__body {
     margin-left: 250px;
   }
@@ -36,6 +29,5 @@
 
   &__span {
     font-weight: bold;
-
   }
 }
