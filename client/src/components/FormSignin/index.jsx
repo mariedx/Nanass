@@ -1,4 +1,4 @@
-import Input from 'components/Input';
+import Input from 'components/RegisInput';
 import { useState } from 'react';
 import Button from 'components/Button';
 import ApiRegistrations from 'api/registrations';
@@ -72,14 +72,14 @@ const FormSignin = () => {
     <div className={styles.FormSignIn}>
       <Input
         title="Email"
-        type="registration"
+        type="email"
         handleChange={handleEmail}
         value={emailValue}
         placeholder="Email"
       />
       <Input
         title="Mot de passe"
-        type="registration"
+        type="password"
         handleChange={handlePassword}
         value={passwordValue}
         placeholder="Mot de passe"
@@ -87,6 +87,7 @@ const FormSignin = () => {
       <br />
       <br />
       <Button
+        href="#"
         title="S'enregistrer"
         type="primary"
         handleClick={handleSubmit}

@@ -6,19 +6,16 @@ const Layout = ({
   children, home, title, subtitle,
 }) => (
   <div className={styles.Layout}>
-    {home && (
-      <>
-        <Navbar />
-      </>
-    )}
-    {!home && (
-      <div className={styles.Header}>
-        <Navbar />
-        <h1 className={styles.Header__title}>{title}</h1>
-        <h2 className={styles.Header__subtitle}>{subtitle}</h2>
-      </div>
-    )}
+
     <main>
+      {home && <Navbar />}
+      {!home && (
+        <div className={styles.Header}>
+          <Navbar />
+          <h1 className={styles.Header__title}>{title}</h1>
+          <h2 className={styles.Header__subtitle}>{subtitle}</h2>
+        </div>
+      )}
       {children}
     </main>
     {!home && (

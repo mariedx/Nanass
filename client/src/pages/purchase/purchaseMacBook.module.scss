@@ -1,16 +1,15 @@
-.purchase {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 300px  120px  120px;
-  grid-template-areas: "sidebar content content";
+.Purchase {
+  margin-top: 50px;
+  text-align: center;
 
-  &__sidebar {
-    grid-area: sidebar;
-    margin: 30px;
-    font-weight: bold;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
   }
 
-  &__content {
-    grid-area: content;
+  &__errorMessage {
+    color: red;
+    font-style: italic;
   }
 }

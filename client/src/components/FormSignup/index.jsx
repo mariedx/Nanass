@@ -1,4 +1,4 @@
-import Input from 'components/Input';
+import Input from 'components/RegisInput';
 import { useState } from 'react';
 import Button from 'components/Button';
 import styles from './formsignup.module.scss';
@@ -55,14 +55,14 @@ const FormSignup = () => {
       />
       <Input
         title="Mot de passe"
-        type="registration"
+        type="password"
         handleChange={handlePassword}
         value={passwordValue}
         placeholder="Mot de passe"
       />
       <Input
         title="Confirmation du mot de passe"
-        type="registration"
+        type="password"
         handleChange={handlePasswordConfirm}
         value={confirmPasswordValue}
         placeholder="Confirmation du mot de passe"
@@ -70,6 +70,7 @@ const FormSignup = () => {
       <br />
       <br />
       <Button
+        href="#"
         title="S'enregistrer"
         type="primary"
       />
