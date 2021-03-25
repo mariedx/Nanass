@@ -118,7 +118,7 @@ const Navbar = () => {
             </Link>
           </Item>
           <Item>
-            <Link href="/profil">
+            <Link href="/user/order">
               <a>Mon profil</a>
             </Link>
           </Item>

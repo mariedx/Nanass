@@ -1,0 +1,40 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.Application {
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+
+  @include mobile{
+    flex-direction: column;
+  }
+
+  &__body {
+    flex-direction: row;
+    
+  }
+
+  &__title{
+    margin-left: 190px;
+    margin-bottom: 50px;
+  }
+
+  &__progressbar {
+    margin-left: 120px;
+    margin-bottom: 100px;
+    display: flex;
+  }
+
+  &__image{
+    margin-left: 220px;
+  }
+
+  &__description {
+    margin-left: 300px;
+    margin-bottom: 50px;
+  }
+}

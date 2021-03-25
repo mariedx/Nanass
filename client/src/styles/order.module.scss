@@ -1,0 +1,41 @@
+
+
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.Order{
+  display: flex;
+  flex-direction: row;
+  margin-left: 100px;
+
+  
+  
+  @include mobile{
+    flex-direction: column;
+  }
+
+  &__sidebar{
+    margin-left: 10px;
+  }
+  &__body {
+    margin-left: 250px;
+  }
+  &__categories {
+    border: solid 1px black;
+    border-radius: 20px;
+    padding-left: auto;
+    justify-content:  center;
+  }
+ 
+  &__description {
+    margin-left: 50px;
+  }
+
+  &__span {
+    font-weight: bold;
+
+  }
+}
