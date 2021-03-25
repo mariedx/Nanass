@@ -1,0 +1,19 @@
+.CartProduct {
+  padding: 5vh;
+
+
+  &__data {
+    list-style: none;
+    display: flex;
+    background-color: blueviolet;
+    justify-content: space-between;
+
+    li {
+      background-color: pink;
+    }
+  }
+
+  &__miniature{
+    width: 15vh;
+  }
+}

@@ -1,0 +1,11 @@
+.CartShow {
+  &__list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+
+    li {
+      text-transform: uppercase;
+    }
+  }
+}
