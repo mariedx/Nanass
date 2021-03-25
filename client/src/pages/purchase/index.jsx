@@ -4,6 +4,7 @@ import ApiMacbooks from 'api/macbooks';
 import CardMacBook from 'components/CardMacBook';
 import Layout from 'components/Layout';
 import SearchBar from 'components/SearchBar';
+import Link from 'next/link';
 import styles from './purchaseMacBook.module.scss';
 
 const purchase = () => {
@@ -60,17 +61,22 @@ const purchase = () => {
                 ram,
                 price,
                 serial_number,
+                id,
               } = macbook;
               return (
-                <CardMacBook
-                  model={model}
-                  size={size}
-                  year={year}
-                  processor={processor}
-                  ram={ram}
-                  price={price}
-                  key={serial_number}
-                />
+                <Link href={`macbooks/${id}`}>
+                  <a>
+                    <CardMacBook
+                      model={model}
+                      size={size}
+                      year={year}
+                      processor={processor}
+                      ram={ram}
+                      price={price}
+                      key={serial_number}
+                    />
+                  </a>
+                </Link>
               );
             })
           )}
