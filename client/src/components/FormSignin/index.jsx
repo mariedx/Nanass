@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import Input from 'components/RegisInput';
 import { useState } from 'react';
-import Button from 'components/Button';
 import ApiRegistrations from 'api/registrations';
 import ApiCustomers from 'api/customers';
 import { useDispatch } from 'react-redux';
 import { loginCustomer } from 'store/users/userActions';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import styles from './formsignin.module.scss';
 
 const FormSignin = () => {
@@ -27,7 +28,8 @@ const FormSignin = () => {
     setPasswordValue(e.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     if (errorMessage) {
       setErrorMessage('');
     }
@@ -69,7 +71,10 @@ const FormSignin = () => {
   };
 
   return (
-    <div className={styles.FormSignIn}>
+    <form
+      className={styles.FormSignin}
+      onSubmit={handleSubmit}
+    >
       <Input
         title="Email"
         type="email"
@@ -86,16 +91,21 @@ const FormSignin = () => {
       />
       <br />
       <br />
-      <Button
-        href="#"
-        title="S'enregistrer"
-        type="primary"
-        handleClick={handleSubmit}
-      />
+      <button
+        type="submit"
+        className={styles.FormSignin__button}
+        onSubmit={handleSubmit}
+      >
+        Se connecter
+      </button>
+      <br />
+      <Link href="/registrations/signup">
+        <a className={styles.FormSignin__signupLink}>Pas encore de compte ? Inscrivez-vous.</a>
+      </Link>
       {errorMessage && (
-        <p className={styles.FormSignIn__error}>{errorMessage}</p>
+        <p className={styles.FormSignin__error}>{errorMessage}</p>
       )}
-    </div>
+    </form>
   );
 };
 
