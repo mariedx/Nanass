@@ -11,15 +11,13 @@ $black: rgb(68, 67, 67);
     list-style: none;
   }
 
-
-
   &__right {
 
     li {
       float: left;
       justify-content: space-between;
 
-      a {
+      .Navbar__link {
         text-decoration: none;
         background-image: linear-gradient($black, white);
         background-position: 0% 90%;
@@ -30,7 +28,7 @@ $black: rgb(68, 67, 67);
         text-transform: uppercase;
       }
 
-      a:hover, a:focus {
+      .Navbar__link:hover, .Navbar__link:focus {
           background-size: 100% 2px;
       }
     }
@@ -41,7 +39,6 @@ $black: rgb(68, 67, 67);
     padding: 15px 10px;
     margin: 5px;
     color: $black;
-
   }
 
 }
