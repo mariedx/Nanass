@@ -1,3 +1,4 @@
+import Button from 'components/Button';
 import CartProduct from 'components/CartProduct';
 import styles from './cartshow.module.scss';
 
@@ -10,6 +11,13 @@ const CartShow = () => (
     </ul>
     <div className={styles.CartShow__space} />
     <CartProduct />
+    <div className={styles.CartShow__deliveryfees}>
+      <p>Frais de livraison : 5 €</p>
+      <p>Total : 255 €</p>
+    </div>
+    <div className={styles.CartShow__button}>
+      <Button href="/" type="primary" title="Livraison et paiement" />
+    </div>
   </div>
 );
 
