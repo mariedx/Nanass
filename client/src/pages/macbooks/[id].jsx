@@ -38,6 +38,7 @@ const product = ({ id }) => {
         ram={TheMacbook.ram}
         aspect={TheMacbook.aspect}
         price={TheMacbook.price}
+        image={TheMacbook.image_url}
       />
     </Layout>
   );

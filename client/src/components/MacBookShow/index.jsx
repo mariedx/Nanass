@@ -5,12 +5,12 @@ import styles from './macbookshow.module.scss';
 
 const MacBookShow = (
   {
-    model, size, year, processor, ram, aspect, price,
+    model, size, year, processor, ram, aspect, price, image,
   },
 ) => (
   <>
     <div className={styles.MacBookShow}>
-      <img className={styles.MacBookShow__image} src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
+      <img className={styles.MacBookShow__image} src={image} alt="MacBook" />
       <div className={styles.MacBookShow__lists}>
         <ul className={styles.MacBookShow__lists__criteria}>
           <li>

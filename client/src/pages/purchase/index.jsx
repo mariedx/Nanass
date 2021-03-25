@@ -62,6 +62,7 @@ const purchase = () => {
                 price,
                 serial_number,
                 id,
+                image_url,
               } = macbook;
               return (
                 <Link href={`macbooks/${id}`}>
@@ -74,6 +75,7 @@ const purchase = () => {
                       ram={ram}
                       price={price}
                       key={serial_number}
+                      image={image_url}
                     />
                   </a>
                 </Link>
