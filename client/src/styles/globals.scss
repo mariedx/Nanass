@@ -13,6 +13,19 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
