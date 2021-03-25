@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from 'store/users/userActions';
 
 const Nav = styled.nav`
   padding: 20px 50px 20px 0px;
@@ -35,6 +37,20 @@ const Item = styled.li`
   text-transform: uppercase;
 
   li:hover {
+    background-size: 100% 2px;
+  }
+`;
+
+const ItemButton = styled.button`
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text), white);
+  background-position: 0% 90%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size .3s;
+  text-transform: uppercase;
+
+  button:hover {
     background-size: 100% 2px;
   }
 `;
@@ -97,6 +113,14 @@ const OverlayMenu = styled.ul`
 
 const Navbar = () => {
   const [toggle, toggleNav] = useState(false);
+  const currentUser = useSelector((state) => state);
+  const dispatch = useDispatch();
+
+  const handleLogout = (event) => {
+    event.preventDefault();
+    dispatch(logout());
+  };
+
   return (
     <>
       <Nav>
@@ -117,16 +141,32 @@ const Navbar = () => {
               <a>Notre concept</a>
             </Link>
           </Item>
-          <Item>
-            <Link href="/profil">
-              <a>Mon profil</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href="#">
-              <a>Déconnexion</a>
-            </Link>
-          </Item>
+          {currentUser.id && (
+            <>
+              <Item>
+                <Link href="/profil">
+                  <a>Mon profil</a>
+                </Link>
+              </Item>
+              <ItemButton onClick={handleLogout}>
+                Déconnexion
+              </ItemButton>
+            </>
+          )}
+          {!currentUser.id && (
+            <>
+              <Item>
+                <Link href="/registrations/signin">
+                  <a>Connexion</a>
+                </Link>
+              </Item>
+              <Item>
+                <Link href="/registrations/signup">
+                  <a>Inscription</a>
+                </Link>
+              </Item>
+            </>
+          )}
         </Menu>
         <NavIcon onClick={() => toggleNav(!toggle)}>
           <Line open={toggle} />
@@ -141,16 +181,32 @@ const Navbar = () => {
               <a>Notre concept</a>
             </Link>
           </Item>
-          <Item>
-            <Link href="/profile">
-              <a>Mon profil</a>
-            </Link>
-          </Item>
-          <Item>
-            <Link href="#">
-              <a>Déconnexion</a>
-            </Link>
-          </Item>
+          {currentUser.id && (
+            <>
+              <Item>
+                <Link href="/profil">
+                  <a>Mon profil</a>
+                </Link>
+              </Item>
+              <ItemButton onClick={handleLogout}>
+                Déconnexion
+              </ItemButton>
+            </>
+          )}
+          {!currentUser.id && (
+            <>
+              <Item>
+                <Link href="/registrations/signin">
+                  <a>Connexion</a>
+                </Link>
+              </Item>
+              <Item>
+                <Link href="/registrations/signup">
+                  <a>Inscription</a>
+                </Link>
+              </Item>
+            </>
+          )}
         </OverlayMenu>
       </Overlay>
     </>
