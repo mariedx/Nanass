@@ -1,0 +1,33 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.Applications {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+
+  @include mobile{
+    flex-direction: column;
+
+    &__body {
+    min-width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 3% 0;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.2rem;
+  }
+
+  &__body {
+    width: 80%;
+    border-left: 1px solid black;
+    text-align: center;
+  }
+}

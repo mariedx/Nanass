@@ -1,23 +1,24 @@
-.SideBar{
-  flex-direction: column;
-  font-size: 25px;
-  font-weight: bold;
-  border-right: 1px solid black;
-  width: 300px;
-
-   
-
-  &__orders{
-    margin-top: 40%;
-    margin-bottom: 30%;
-    
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
   }
-  &__candidate{
-    margin-bottom: 30%;
-  }
-  &__profile{
-    margin-bottom: 30%;
-  }
-
 }
 
+.SideBar{
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  width: 300px;
+  padding: 10% 0;
+
+  &:hover {
+    background-color: rgb(224, 227, 230);
+  }
+
+  @include mobile{
+    width: 100%;
+    padding: 2% 0;
+  }
+}
