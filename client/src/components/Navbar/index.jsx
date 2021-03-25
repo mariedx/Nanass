@@ -99,10 +99,9 @@ const OverlayMenu = styled.ul`
   top: 45%;
   transform: translate(-50%, -50%);
 
-  li {
+  li, button {
     opacity: ${(props) => (props.open ? 1 : 0)};
     font-size: 25px;
-    margin: 50px 0px;
     transition: opacity 0.4s ease-in-out;
   }
 
