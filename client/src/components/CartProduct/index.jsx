@@ -4,9 +4,6 @@ import styles from './cartproduct.module.scss';
 // const {
 //   model,
 //   size,
-//   year,
-//   processor,
-//   ram,
 //   aspect,
 //   price,
 //   image_url: image,
@@ -23,7 +20,7 @@ const CartProduct = () => (
         />
       </li>
       <li>
-        MacBook Pro 15&apos;
+        MacBook Pro 15&apos; - Neuf
         {/* {model}
           {' '}
           +
@@ -35,14 +32,10 @@ const CartProduct = () => (
           € */}
         250 €
       </li>
-      <li>
-        1
-      </li>
-      <li>
-        250 €
-      </li>
     </ul>
+    <div className={styles.CartProduct__space} />
   </div>
+
 );
 
 export default CartProduct;

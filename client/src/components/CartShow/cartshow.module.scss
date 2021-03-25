@@ -1,10 +1,21 @@
 .CartShow {
+
+  &__space {
+    height: 1px;
+    background-color: #525252;
+    width: 80%;
+    margin:auto;
+    margin-bottom: 1vh;
+  }
+
   &__list {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
 
     li {
+      padding: 2vh;
       text-transform: uppercase;
     }
   }

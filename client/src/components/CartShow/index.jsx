@@ -7,9 +7,8 @@ const CartShow = () => (
       <li>Produit</li>
       <li>Description</li>
       <li>Prix</li>
-      <li>Quantité</li>
-      <li>Total</li>
     </ul>
+    <div className={styles.CartShow__space} />
     <CartProduct />
   </div>
 );
