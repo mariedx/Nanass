@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
 
 const product = ({ id }) => {
   const [errorMessage, setErrorMessage] = useState('');
-  const [TheMacbook, setTheMacbook] = useState({});
+  const [theMacbook, setTheMacbook] = useState({});
 
   useEffect(async () => {
     if (errorMessage !== '') {
@@ -31,14 +31,7 @@ const product = ({ id }) => {
   return (
     <Layout title="trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
       <MacBookShow
-        model={TheMacbook.model}
-        size={TheMacbook.size}
-        year={TheMacbook.year}
-        processor={TheMacbook.processor}
-        ram={TheMacbook.ram}
-        aspect={TheMacbook.aspect}
-        price={TheMacbook.price}
-        image={TheMacbook.image_url}
+        macbook={theMacbook}
       />
     </Layout>
   );
