@@ -19,30 +19,27 @@
   }
 
   &__title {
-    margin: 3% 0;
+    margin-bottom: 4%;
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 600;
     letter-spacing: 0.2rem;
   }
 
   &__body {
+    margin-bottom: 5%;
     width: 80%;
     border-left: 1px solid black;
     text-align: center;
   }
-  
-  &__progressbar {
-    margin-left: 120px;
-    margin-bottom: 100px;
+
+  &__card {
     display: flex;
-  }
+    flex-direction: column;
+    align-items: center;
 
-  &__image{
-    margin-left: 220px;
-  }
-
-  &__description {
-    margin-left: 300px;
-    margin-bottom: 50px;
+    &__progressbar {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

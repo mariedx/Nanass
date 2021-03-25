@@ -1,13 +1,27 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
 .ProgressBar{
-  background-color: grey;
+  background-color: rgb(230, 230, 230);
   border-radius: .5rem;
-  width: 400px;
+  width: 300px;
   height: 20px;
 
   &__inside {
-    background-color: rgb(62, 122, 235);
+    background-color: rgb(106, 136, 219);
     height: 20px;
     border-radius: 1rem;
-    width: 250px;
+    width: 200px;
+  }
+
+  @include mobile{
+    width: 150px;
+
+    &__inside {
+    width: 110px;
+    }
   }
 }
