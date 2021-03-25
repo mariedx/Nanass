@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :admins, except: [:destroy]
     resources :macbooks
     resources :orders, except: [:destroy]
+    resources :order_macbooks
   end
 
   devise_for :users,

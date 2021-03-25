@@ -80,7 +80,7 @@ puts "10 addresses created"
     keyboard: ["AZERTY", "QWERTY"].sample,
     serial_number: "CO45TEY#{i + 1}",
     is_camera_working: [true, false].sample,
-    image_url: ["https://www.pexels.com/fr-fr/photo/cafe-tasse-ordinateur-portable-internet-4050325/", "https://www.pexels.com/fr-fr/photo/ordinateur-portable-lit-chambre-a-coucher-animal-4297820/", "https://www.pexels.com/fr-fr/photo/bois-magazines-ordinateur-portable-maison-4050318/", "https://www.pexels.com/fr-fr/photo/bras-femme-ordinateur-portable-naviguer-4050334/", "https://www.pexels.com/fr-fr/photo/personne-mains-bureau-ordinateur-portable-4065617/"].sample,
+    image_url: ["https://images.pexels.com/photos/4929241/pexels-photo-4929241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/1181216/pexels-photo-1181216.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260","https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/3975680/pexels-photo-3975680.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/4050430/pexels-photo-4050430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/4050334/pexels-photo-4050334.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/4297820/pexels-photo-4297820.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940","https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"].sample,
     price: [470, 510, 575, 680, 435].sample,
     aspect: ["Fair", "Good", "Very Good", "As New"].sample,
   )
