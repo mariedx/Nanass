@@ -35,7 +35,7 @@ class Api::UsersController < Api::BaseController
   end
 
   def render_if_not_author_or_admin
-    unless current_user == @user || current_user.admin?
+    unless current_user.id == @user.id || current_user.admin?
       render json: not_author_data, status: 403
     end
   end
