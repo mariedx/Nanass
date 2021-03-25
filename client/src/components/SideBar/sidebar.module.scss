@@ -1,23 +1,18 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
 .SideBar{
   flex-direction: column;
   font-size: 25px;
   font-weight: bold;
-  border-right: 1px solid black;
   width: 300px;
+  padding: 10% 0;
 
-   
-
-  &__orders{
-    margin-top: 40%;
-    margin-bottom: 30%;
-    
+  @include mobile{
+    width: 100%;
+    padding: 2% 0;
   }
-  &__candidate{
-    margin-bottom: 30%;
-  }
-  &__profile{
-    margin-bottom: 30%;
-  }
-
 }
-
