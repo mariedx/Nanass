@@ -1,7 +1,7 @@
 class Api::OrdersController < Api::BaseController
   before_action :authenticate_user!
   before_action :set_order, only: [:show, :update, :destroy]
-  before_action :render_if_not_admin, only: [:index, :update]
+  before_action :render_if_not_admin, only: [:index, :update, :destroy]
   before_action :render_if_not_author_or_admin, only: [:show]
 
   # GET /orders
