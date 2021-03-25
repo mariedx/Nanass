@@ -1,0 +1,23 @@
+.SideBar{
+  flex-direction: column;
+  font-size: 25px;
+  font-weight: bold;
+  border-right: 1px solid black;
+  width: 300px;
+
+   
+
+  &__orders{
+    margin-top: 40%;
+    margin-bottom: 30%;
+    
+  }
+  &__candidate{
+    margin-bottom: 30%;
+  }
+  &__profile{
+    margin-bottom: 30%;
+  }
+
+}
+
