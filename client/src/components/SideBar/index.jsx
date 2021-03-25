@@ -3,11 +3,13 @@ import Link from 'next/link';
 import styles from './sidebar.module.scss';
 
 const SideBar = ({ href, title }) => (
-  <div className={styles.SideBar}>
-    <Link href={href}>
-      <a>{title}</a>
-    </Link>
-  </div>
+  <Link href={href}>
+    <a>
+      <div className={styles.SideBar}>
+        {title}
+      </div>
+    </a>
+  </Link>
 );
 
 export default SideBar;

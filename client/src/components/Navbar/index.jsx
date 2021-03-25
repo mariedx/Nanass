@@ -143,7 +143,7 @@ const Navbar = () => {
           {currentUser.id && (
             <>
               <Item>
-                <Link href="/profil">
+                <Link href="/user/profile">
                   <a>Mon profil</a>
                 </Link>
               </Item>
@@ -183,7 +183,7 @@ const Navbar = () => {
           {currentUser.id && (
             <>
               <Item>
-                <Link href="/profil">
+                <Link href="/user/profile">
                   <a>Mon profil</a>
                 </Link>
               </Item>
