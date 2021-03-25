@@ -142,7 +142,7 @@ const Navbar = () => {
             </Link>
           </Item>
           <Item>
-            <Link href="/profile">
+            <Link href="/user/order">
               <a>Mon profil</a>
             </Link>
           </Item>

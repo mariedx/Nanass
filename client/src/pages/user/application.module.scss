@@ -5,24 +5,32 @@
 }
 
 .Application {
+  margin-top: 50px;
+  text-align: center;
   display: flex;
   flex-direction: row;
-  margin-left: 100px;
 
   @include mobile{
     flex-direction: column;
+
+    &__body {
+    min-width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 3% 0;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 0.2rem;
   }
 
   &__body {
-    flex-direction: row;
-    
+    width: 80%;
+    border-left: 1px solid black;
+    text-align: center;
   }
-
-  &__title{
-    margin-left: 190px;
-    margin-bottom: 50px;
-  }
-
+  
   &__progressbar {
     margin-left: 120px;
     margin-bottom: 100px;
