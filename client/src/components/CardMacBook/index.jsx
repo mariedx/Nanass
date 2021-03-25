@@ -1,11 +1,11 @@
 import styles from './cardmacbook.module.scss';
 
 const CardMacBook = ({
-  model, size, year, processor, ram, price,
+  model, size, year, processor, ram, price, image,
 }) => (
   <div className={styles.CardMacBook}>
     <div className={styles.CardMacBook__picture}>
-      <img src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
+      <img src={image} alt="MacBook" />
     </div>
     <p className={styles.CardMacBook__title}>
       {model}
