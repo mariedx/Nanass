@@ -1,10 +1,10 @@
 /* eslint-disable object-shorthand */
 import axiosInstance from 'api';
 
-class ApiCustomers {
+class ApiAdmins {
   static async get({ id, token }) {
     try {
-      const response = await axiosInstance.get(`customers/${id}`, {
+      const response = await axiosInstance.get(`admins/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -15,7 +15,7 @@ class ApiCustomers {
       console.error(error);
       return {
         error: {
-          message: 'Une erreur s\'est produite lors de la connexion',
+          message: 'Une erreur s\'est produite lors de la connexion admin',
         },
       };
     }
@@ -24,16 +24,12 @@ class ApiCustomers {
   static async create(dataToSend) {
     const {
       userId,
-      firstName,
-      lastName,
       token,
     } = dataToSend;
 
     const bodyParameters = {
       customer: {
         user_id: userId,
-        first_name: firstName,
-        last_name: lastName,
       },
     };
 
@@ -45,7 +41,7 @@ class ApiCustomers {
 
     try {
       const response = await axiosInstance.post(
-        'customers/',
+        'admins/',
         bodyParameters,
         config,
       );
@@ -55,11 +51,11 @@ class ApiCustomers {
       console.error(error);
       return {
         error: {
-          message: 'Une erreur s\'est produite lors de la création de client. Veuillez contacter l\'administration du site à partir de la page contact',
+          message: 'Une erreur s\'est produite lors de la création de client. Veuillez contacter l\'administration du site à part de la page contact',
         },
       };
     }
   }
 }
 
-export default ApiCustomers;
+export default ApiAdmins;
