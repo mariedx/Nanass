@@ -8,6 +8,7 @@ const FormAdress = () => {
   const [streetNumberValue, setStreetNumberValue] = useState('');
   const [streetNameValue, setStreetNameValue] = useState('');
   const [zipValue, setZipValue] = useState('');
+  const [cityValue, setCityValue] = useState('');
   const [countryValue, setCountryValue] = useState('');
   const [phoneValue, setPhoneValue] = useState('');
   const [complementValue, setComplementValue] = useState('');
@@ -44,6 +45,12 @@ const FormAdress = () => {
         type="text"
         handleChange={setZipValue}
         value={zipValue}
+      />
+      <Input
+        title="Ville"
+        type="text"
+        handleChange={setCityValue}
+        value={cityValue}
       />
       <Input
         title="Pays"
