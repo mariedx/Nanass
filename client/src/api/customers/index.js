@@ -6,7 +6,7 @@ class ApiCustomers {
     try {
       const response = await axiosInstance.get(`customers/${id}`, {
         headers: {
-          Authorization: `Bearer ${token}}`,
+          Authorization: `Bearer ${token}`,
         },
       });
 
