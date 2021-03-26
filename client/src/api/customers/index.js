@@ -55,7 +55,7 @@ class ApiCustomers {
       console.error(error);
       return {
         error: {
-          message: 'Une erreur s\'est produite lors de la création de client. Veuillez contacter l\'administration du site à part de la page contact',
+          message: 'Une erreur s\'est produite lors de la création de client. Veuillez contacter l\'administration du site à partir de la page contact',
         },
       };
     }
