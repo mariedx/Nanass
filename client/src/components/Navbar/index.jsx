@@ -5,6 +5,9 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'store/users/userActions';
+import ApiSessions from 'api/sessions';
+import Cookies from 'js-cookie';
+import config from 'config';
 
 const Nav = styled.nav`
   padding: 20px 50px 20px 0px;
@@ -115,8 +118,10 @@ const Navbar = () => {
   const currentUser = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const handleLogout = (event) => {
+  const handleLogout = async (event) => {
     event.preventDefault();
+    const token = Cookies.get(config.COOKIE_STORAGE_KEY_USER_TOKEN);
+    await ApiSessions.logout({ token });
     dispatch(logout());
   };
 
