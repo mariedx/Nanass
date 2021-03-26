@@ -8,24 +8,24 @@ const Footer = () => (
     <div className={styles.FooterLinks}>
       <ul>
         <li>
-          <Link href="/ressources/cgv">
+          <Link href="/resources/terms-and-conditions">
             Conditions générales de vente
           </Link>
         </li>
         <li>
-          <Link href="/ressources/legalemention">
+          <Link href="/resources/legal-notice">
             Mentions légales
           </Link>
         </li>
         <li>
-          <Link href="/ressources/avis">
+          <Link href="/resources/feedbacks">
             Vos avis
           </Link>
         </li>
       </ul>
       <ul>
         <li>
-          <Link href="/ressources/confidentialpolitique">
+          <Link href="/resources/privacy-policy">
             Politique de confidentialité
           </Link>
         </li>
