@@ -5,9 +5,10 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'store/users/userActions';
+import styles from './navbar.module.scss';
 
 const Nav = styled.nav`
-  padding: 20px 50px 20px 0px;
+  padding: 20px 50px;
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -16,6 +17,8 @@ const Nav = styled.nav`
 
 const Menu = styled.ul`
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
 
   li:nth-child(2) {
@@ -141,37 +144,50 @@ const Navbar = () => {
             </Link>
           </Item>
           {currentUser.id && (
-            <>
-              <Item>
-                <Link href="/user/profile">
-                  <a>Mon profil</a>
-                </Link>
-              </Item>
-              <ItemButton onClick={handleLogout}>
-                Déconnexion
-              </ItemButton>
-            </>
+          <>
+            <Item>
+              <Link href="/user/profile">
+                <a>Mon profil</a>
+              </Link>
+            </Item>
+            <ItemButton onClick={handleLogout}>
+              Déconnexion
+            </ItemButton>
+          </>
           )}
           {!currentUser.id && (
-            <>
-              <Item>
-                <Link href="/registrations/signin">
-                  <a>Connexion</a>
-                </Link>
-              </Item>
-              <Item>
-                <Link href="/registrations/signup">
-                  <a>Inscription</a>
-                </Link>
-              </Item>
-            </>
+          <>
+            <Item>
+              <Link href="/registrations/signin">
+                <a>Connexion</a>
+              </Link>
+            </Item>
+            <Item>
+              <Link href="/registrations/signup">
+                <a>Inscription</a>
+              </Link>
+            </Item>
+          </>
           )}
         </Menu>
-        <NavIcon onClick={() => toggleNav(!toggle)}>
-          <Line open={toggle} />
-          <Line open={toggle} />
-          <Line open={toggle} />
-        </NavIcon>
+        <div>
+          <Link href="/cart">
+            <a className={styles.Navbar__cart}>
+              <Image
+                priority
+                src="/images/cart.svg"
+                height={40}
+                width={40}
+                alt="Cart"
+              />
+            </a>
+          </Link>
+          <NavIcon onClick={() => toggleNav(!toggle)}>
+            <Line open={toggle} />
+            <Line open={toggle} />
+            <Line open={toggle} />
+          </NavIcon>
+        </div>
       </Nav>
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>
