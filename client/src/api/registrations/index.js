@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable object-shorthand */
 
 import axiosInstance from 'api';
@@ -34,10 +35,53 @@ class ApiRegistrations {
     }
   }
 
-  static async signup() {
-    const data = await axiosInstance.post('signup');
+  static async signup(dataToSend) {
+    const {
+      email,
+      password,
+      passwordConfirmation,
+    } = dataToSend;
 
-    return data;
+    try {
+      const response = await axiosInstance.post('signup', {
+        user: {
+          email,
+          password,
+          password_confirmation: passwordConfirmation,
+        },
+      });
+
+      console.log('Api signup', response);
+
+      const token = response.headers.authorization.split('Bearer ')[1];
+      const { data } = response.data;
+
+      const { attributes } = data;
+      const result = {
+        token,
+        id: data.id,
+        email: attributes.email,
+      };
+
+      return result;
+    } catch (error) {
+      console.error(error);
+      console.error('Api signup error', error.response);
+
+      if (error.response.data.errors.filter((err) => err.title === 'Invalid email').length !== 0) {
+        return {
+          error: {
+            message: 'Cet email est déjà utilisé',
+          },
+        };
+      }
+
+      return {
+        error: {
+          message: 'Une erreur vient de se produire lors de l\'inscription',
+        },
+      };
+    }
   }
 }
 
