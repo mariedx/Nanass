@@ -6,9 +6,11 @@ import styles from './jumbotron.module.scss';
 
 const Jumbotron = () => (
   <div className={styles.Jumbotron}>
-    <h1>Régénérer des Macbooks à l&apos;infini</h1>
-    <p>Vendez et achetez votre ordinateur sur Nanass</p>
-    <div className={styles.Buttons}>
+    <div>
+      <h1>Régénérer des Macbooks à l&apos;infini</h1>
+      <p>Vendez et achetez votre ordinateur sur Nanass</p>
+    </div>
+    <div className={styles.Jumbotron__buttons}>
       <Link href="/purchase" passHref>
         <Button
           href="/purchase"
@@ -23,7 +25,7 @@ const Jumbotron = () => (
         type="light"
       />
     </div>
-    <footer className={styles.Footer}>
+    <footer className={styles.Jumbotron__footer}>
       <SocialNetworks />
     </footer>
   </div>
