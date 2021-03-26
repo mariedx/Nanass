@@ -6,7 +6,6 @@ const Cart = () => (
   <Layout title="Mon panier" subtitle="">
     <div className={styles.Cart}>
       <CartShow />
-      <p>ça part en prod</p>
     </div>
   </Layout>
 );
