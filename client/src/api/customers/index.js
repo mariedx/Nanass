@@ -15,7 +15,47 @@ class ApiCustomers {
       console.error(error);
       return {
         error: {
-          message: 'Une erreur vient de se produire lors de la connexion',
+          message: 'Une erreur s\'est produite lors de la connexion',
+        },
+      };
+    }
+  }
+
+  static async create(dataToSend) {
+    const {
+      userId,
+      firstName,
+      lastName,
+      token,
+    } = dataToSend;
+
+    const bodyParameters = {
+      customer: {
+        user_id: userId,
+        first_name: firstName,
+        last_name: lastName,
+      },
+    };
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}}`,
+      },
+    };
+
+    try {
+      const response = await axiosInstance.post(
+        'customers/',
+        bodyParameters,
+        config,
+      );
+
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      return {
+        error: {
+          message: 'Une erreur s\'est produite lors de la création de client. Veuillez contacter l\'administration du site à part de la page contact',
         },
       };
     }

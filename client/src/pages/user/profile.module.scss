@@ -4,45 +4,37 @@
   }
 }
 
-.Profile{
+.Profile {
+  margin-top: 50px;
+  text-align: center;
   display: flex;
   flex-direction: row;
-  margin-left: 100px;
 
-  @include mobile{
+  @include mobile {
     flex-direction: column;
+
+    &__body {
+    min-width: 100%;
+    border-left: none;
+    }
   }
 
   &__title {
-    margin-left: 155px;
-    margin-bottom: 50px;
+    margin-bottom: 4%;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
   }
 
   &__body {
-    margin-left: 100px;
+    margin-bottom: 5%;
+    width: 80%;
+    border-left: 1px solid black;
   }
 
-  &__input{
-    flex-direction: row;
-    margin-left: 150px;
-    margin-bottom: 30px;
-  }
-
-  &__name{
-    display: flex;
-    padding-right: 400px;
-    margin-bottom: 30px;
-  }
-
-  &__password {
-    display: flex;
-    padding-right: 400px;
-    align-items: flex-end;
-    margin-bottom: 10px;
-  }
-
-  &__button{
-    margin-left: 270px;
-    margin-bottom: 100px;
+  &__form {
+    &__button{
+      margin: 2% 0;
+    }
   }
 }

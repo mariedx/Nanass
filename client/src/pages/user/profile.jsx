@@ -9,31 +9,26 @@ const Profile = () => (
   <Layout title="Mon espace">
     <div className={styles.Profile}>
       <div className={styles.Profile__sidebar}>
-        <SideBar href="./application" title="Mes candidatures" />
         <SideBar href="./order" title="Mes commandes" />
+        <SideBar href="./application" title="Mes candidatures" />
         <SideBar href="./profile" title="Mon profil" />
       </div>
+
       <div className={styles.Profile__body}>
-        <div className={styles.Profile__title}>
-          <h3>Mettre a jour mes infos</h3>
-        </div>
-        <div className={styles.Profile__input}>
+        <h3 className={styles.Profile__title}>Mettre à jour mon profil</h3>
+        <div className={styles.Profile__form}>
           <RegisInput
             title="email"
-            placeholder="email"
+            placeholder="Email"
           />
-        </div>
-        <div className={styles.Profile__name}>
           <RegisInput
             title="Prénom"
-            placeholder="prénom"
+            placeholder="Prénom"
           />
           <RegisInput
             title="Nom"
             placeholder="Nom"
           />
-        </div>
-        <div className={styles.Profile__password}>
           <RegisInput
             title="Mot de passe"
             placeholder="Mot de passe"
@@ -42,13 +37,13 @@ const Profile = () => (
             title="Confirmation mot de passe"
             placeholder="Confirmation mot de passe"
           />
-        </div>
-        <div className={styles.Profile__button}>
-          <Button
-            title="valider"
-            type="primary"
-            href="#"
-          />
+          <div className={styles.Profile__form__button}>
+            <Button
+              title="valider"
+              type="primary"
+              href="#"
+            />
+          </div>
         </div>
       </div>
     </div>
