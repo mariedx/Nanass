@@ -14,7 +14,7 @@ const Concept = () => (
           qui veulent les réutiliser les rendre accessibles.
           C&apos;est aussi l&apos;ananas : l&apos;un des fruits qui se régénère seul !
           <br />
-          Notre objectif ? régénérer les pommes à l&apos;infini tel un ananas !
+          Notre objectif ? Régénérer les pommes à l&apos;infini tel un ananas !
         </p>
         <p className={styles.Concept__title}>Responsable</p>
         <p>
