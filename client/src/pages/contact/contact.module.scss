@@ -59,7 +59,7 @@
     margin-bottom: 20px;
 
     &:hover {
-      background-color:#4bd199;
+      background-color:var(--color-primary-dark);
     }
   }
 
@@ -84,7 +84,7 @@
   }
 
   &__success {
-    color: #4bd199;
+    color: var(--color-primary-dark);
     font-style: italic;
     text-align: center;
   }

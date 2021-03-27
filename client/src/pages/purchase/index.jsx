@@ -7,6 +7,16 @@ import SearchBar from 'components/SearchBar';
 import Link from 'next/link';
 import styles from './purchaseMacBook.module.scss';
 
+const getMacbookTitle = (macbook) => {
+  const {
+    model,
+    size,
+  } = macbook;
+
+  const title = `${model.toLowerCase()} ${size.toString().toLowerCase()}`;
+  return title;
+};
+
 const purchase = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [allMacbooks, setAllMacbooks] = useState([]);
@@ -18,7 +28,24 @@ const purchase = () => {
   };
 
   useEffect(() => {
-    // Filter logic with displayed Macbooks
+    if (searchInput === '') {
+      setDisplayedMacbooks(allMacbooks);
+      return;
+    }
+
+    const optimizedSearchInput = searchInput
+      .toLowerCase()
+      .split(' ')
+      .filter((word) => word !== '')
+      .join(' ');
+
+    const filteredMacbooks = allMacbooks.filter((macbook) => {
+      const title = getMacbookTitle(macbook);
+
+      return title.includes(optimizedSearchInput);
+    });
+
+    setDisplayedMacbooks(filteredMacbooks);
   }, [searchInput]);
 
   useEffect(async () => {
@@ -54,28 +81,15 @@ const purchase = () => {
           {displayedMacbooks.length !== 0 && (
             displayedMacbooks.map((macbook) => {
               const {
-                model,
-                size,
-                year,
-                processor,
-                ram,
-                price,
                 serial_number,
                 id,
-                image_url,
               } = macbook;
               return (
                 <Link href={`macbooks/${id}`}>
                   <a>
                     <CardMacBook
-                      model={model}
-                      size={size}
-                      year={year}
-                      processor={processor}
-                      ram={ram}
-                      price={price}
+                      macbook={macbook}
                       key={serial_number}
-                      image={image_url}
                     />
                   </a>
                 </Link>

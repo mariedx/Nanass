@@ -13,6 +13,7 @@ const Products = () => (
         <SideBar href="./products" title="Gérer annonces ventes" />
         <SideBar href="./searches" title="Gérer recherches" />
         <SideBar href="./applications" title="Gérer candidatures" />
+        <SideBar href="./add-product" title="Ajouter un produit a la vente" />
       </div>
       <div className={styles.Products__body}>
         <Link href="/purchase">
@@ -27,6 +28,7 @@ const Products = () => (
 
         <div className={styles.Products__card}>
           <CardMacBook
+            image="https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
             model="Macbook Air"
             size="15"
             year="mid-2015"
