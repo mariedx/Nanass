@@ -7,8 +7,7 @@ const Home = () => (
     <style jsx global>
       {`
         body {
-background-color: var(--color-secondary);
-background: linear-gradient(to bottom, #ffff 50%, var(--color-secondary) 50%);
+          background: linear-gradient(to bottom, #ffff 50%, var(--color-secondary) 50%);
         }
       `}
     </style>
