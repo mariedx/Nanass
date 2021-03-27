@@ -3,7 +3,27 @@ import CardMacBook from 'components/CardMacBook';
 import Layout from 'components/Layout';
 import SideBar from 'components/SideBar';
 import Link from 'next/link';
+import cookie from 'cookie';
+import config from 'config';
+import isJwtExpired from 'utils/jwt';
 import styles from './products.module.scss';
+
+const getServerSideProps = ({ req }) => {
+  const cookieData = cookie.parse(req.headers.cookie || 'null');
+  const tokenKey = config.COOKIE_STORAGE_KEY_USER_TOKEN;
+  const token = cookieData[tokenKey];
+
+  if (!token || isJwtExpired(token)) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
+};
 
 const exampleMacbook = {
   model: 'Macbook Air',
@@ -60,3 +80,4 @@ const Products = () => (
 );
 
 export default Products;
+export { getServerSideProps };
