@@ -26,7 +26,7 @@ const CardMacBook = ({
     <p className={styles.CardMacBook__price}>
       {price}
       {' '}
-      $
+      €
     </p>
   </div>
 );
