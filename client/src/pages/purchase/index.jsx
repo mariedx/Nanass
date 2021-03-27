@@ -7,6 +7,14 @@ import SearchBar from 'components/SearchBar';
 import Link from 'next/link';
 import styles from './purchaseMacBook.module.scss';
 
+const macbookPropertiesNotToSearch = [
+  'battery',
+  'serial_number',
+  'is_camera_working',
+  'image_url',
+  'price',
+];
+
 const purchase = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [allMacbooks, setAllMacbooks] = useState([]);
