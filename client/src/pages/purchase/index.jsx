@@ -7,13 +7,15 @@ import SearchBar from 'components/SearchBar';
 import Link from 'next/link';
 import styles from './purchaseMacBook.module.scss';
 
-const macbookPropertiesNotToSearch = [
-  'battery',
-  'serial_number',
-  'is_camera_working',
-  'image_url',
-  'price',
-];
+const getMacbookTitle = (macbook) => {
+  const {
+    model,
+    size,
+  } = macbook;
+
+  const title = `${model.toLowerCase()} ${size.toString().toLowerCase()}`;
+  return title;
+};
 
 const purchase = () => {
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,7 +28,24 @@ const purchase = () => {
   };
 
   useEffect(() => {
-    // Filter logic with displayed Macbooks
+    if (searchInput === '') {
+      setDisplayedMacbooks(allMacbooks);
+      return;
+    }
+
+    const optimizedSearchInput = searchInput
+      .toLowerCase()
+      .split(' ')
+      .filter((word) => word !== '')
+      .join(' ');
+
+    const filteredMacbooks = allMacbooks.filter((macbook) => {
+      const title = getMacbookTitle(macbook);
+
+      return title.includes(optimizedSearchInput);
+    });
+
+    setDisplayedMacbooks(filteredMacbooks);
   }, [searchInput]);
 
   useEffect(async () => {
