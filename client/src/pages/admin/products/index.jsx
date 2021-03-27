@@ -13,7 +13,7 @@ const Products = () => (
         <SideBar href="./products" title="Gérer annonces ventes" />
         <SideBar href="./searches" title="Gérer recherches" />
         <SideBar href="./applications" title="Gérer candidatures" />
-        <SideBar href="./addproduct" title="Ajouter un produit a la vente" />
+        <SideBar href="./add-product" title="Ajouter un produit a la vente" />
       </div>
       <div className={styles.Products__body}>
         <Link href="/purchase">

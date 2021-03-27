@@ -8,7 +8,7 @@ import RegisInput from 'components/RegisInput';
 
 const AddProduct = () => {
 
-  const [modeleValue, setModeleValue] = useState('');
+  const [modelValue, setModelValue] = useState('');
   const [dateValue, setDateValue] = useState('');
   const [sizeValue, setSizeValue] = useState('');
   const [processorValue, setProcessorValue] = useState('');
@@ -16,8 +16,8 @@ const AddProduct = () => {
   const [priceValue, setPriceValue] = useState('');
 
 
-  const handleModele = (e) => {
-    setModeleValue(e.target.value);
+  const handleModel = (e) => {
+    setModelValue(e.target.value);
   };
 
   const handleDate = (e) => {
@@ -47,7 +47,7 @@ const AddProduct = () => {
         <SideBar href="./products" title="Gérer annonces ventes" />
         <SideBar href="./searches" title="Gérer recherches" />
         <SideBar href="./applications" title="Gérer candidatures" />
-        <SideBar href="./addproduct" title="Ajouter un produit a la vente" />
+        <SideBar href="./add-product" title="Ajouter un produit a la vente" />
       </div>
       <div className={styles.AddProduct__body}>
         <h2 className={styles.AddProduct__title}>Ajouter un nouveau produit</h2>
@@ -55,8 +55,8 @@ const AddProduct = () => {
           title="Modèle"
           className={styles.RegisInput}
           placeholder="Modèle"
-          handleChange={handleModele}
-          value={modeleValue}
+          handleChange={handleModel}
+          value={modelValue}
           type="text"
         />
         <RegisInput 
