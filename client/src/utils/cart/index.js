@@ -12,8 +12,19 @@ const setEmptyCartInLocalStorage = () => {
 };
 
 const get = () => {
-  const productsJson = localStorage.getItem(key);
-  return JSON.parse(productsJson);
+  if (isInLocalStorage()) {
+    const productsJson = localStorage.getItem(key);
+    return JSON.parse(productsJson);
+  }
+  return undefined;
+};
+
+const initialize = () => {
+  if (isInLocalStorage()) {
+    return get();
+  }
+  setEmptyCartInLocalStorage();
+  return [];
 };
 
 const size = () => {
@@ -42,6 +53,7 @@ const Cart = {
   isInLocalStorage,
   setEmptyCartInLocalStorage,
   get,
+  initialize,
   size,
   setInLocalStorage,
   removeItem,

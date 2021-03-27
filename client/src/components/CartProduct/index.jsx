@@ -7,7 +7,6 @@ const CartProduct = ({ macbook }) => {
     price,
     image_url: image,
   } = macbook;
-  console.log(model);
 
   return (
     <div className={styles.CartProduct}>
@@ -20,15 +19,10 @@ const CartProduct = ({ macbook }) => {
           />
         </li>
         <li>
-          {model}
-          {' '}
-          +
-          {size}
+          {`${model} ${size}`}
         </li>
         <li>
-          {price}
-          {' '}
-          €
+          {`${price} €`}
         </li>
       </ul>
       <div className={styles.CartProduct__space} />
