@@ -4,7 +4,7 @@
   }
 }
 
-.Order{
+.AddProduct {
   margin-top: 50px;
   text-align: center;
   display: flex;
@@ -15,29 +15,25 @@
 
     &__body {
     min-width: 100%;
-    border-left: none;
     }
   }
 
   &__title {
-    margin-bottom: 4%;
+    margin: 3% 0;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: lighter;
     letter-spacing: 0.2rem;
   }
 
   &__body {
-    margin-bottom: 5%;
     width: 80%;
     border-left: 1px solid black;
-  }
-
-  &__card {
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
 
   &__button {
-    margin-top: 2%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
   }
 }

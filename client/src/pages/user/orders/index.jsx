@@ -2,21 +2,21 @@ import React from 'react';
 import Layout from 'components/Layout';
 import SideBar from 'components/SideBar';
 import CardMacBook from 'components/CardMacBook';
-import styles from './order.module.scss';
+import styles from './orders.module.scss';
 
-const Order = () => (
+const Orders = () => (
   <Layout title="Mon espace">
-    <div className={styles.Order}>
-      <div className={styles.Order__sidebar}>
-        <SideBar href="./order" title="Mes commandes" />
-        <SideBar href="./application" title="Mes candidatures" />
+    <div className={styles.Orders}>
+      <div className={styles.Orders__sidebar}>
+        <SideBar href="./orders" title="Mes commandes" />
+        <SideBar href="./applications" title="Mes candidatures" />
         <SideBar href="./profile" title="Mon profil" />
       </div>
 
-      <div className={styles.Order__body}>
-        <h3 className={styles.Order__title}>Mes commandes</h3>
+      <div className={styles.Orders__body}>
+        <h3 className={styles.Orders__title}>Mes commandes</h3>
 
-        <div className={styles.Order__card}>
+        <div className={styles.Orders__card}>
           <CardMacBook
             model="Macbook Air"
             size="15"
@@ -32,4 +32,4 @@ const Order = () => (
   </Layout>
 );
 
-export default Order;
+export default Orders;

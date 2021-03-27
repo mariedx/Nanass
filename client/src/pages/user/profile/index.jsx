@@ -9,8 +9,8 @@ const Profile = () => (
   <Layout title="Mon espace">
     <div className={styles.Profile}>
       <div className={styles.Profile__sidebar}>
-        <SideBar href="./order" title="Mes commandes" />
-        <SideBar href="./application" title="Mes candidatures" />
+        <SideBar href="./orders" title="Mes commandes" />
+        <SideBar href="./applications" title="Mes candidatures" />
         <SideBar href="./profile" title="Mon profil" />
       </div>
 

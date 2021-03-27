@@ -1,3 +1,9 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
 @mixin list_display {
   list-style: none;
   display: flex;
@@ -6,26 +12,45 @@
 }
 
 .MacBookShow {
-  display: flex;
-  padding: 5vh;
+  padding: 10vh 5vh;
 
-  &__image {
-    width: 50vw;
-  }
-
-  &__button {
+  &__title {
+    padding-bottom: 3vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+  }
 
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @include mobile{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__image {
+      max-width: 50vw;
+      max-height: 30vw;
+      object-fit: contain;
+
+      @include mobile{
+        max-width: 80vw;
+        margin-bottom: 20px;
+      }
+    }
   }
 
   &__lists {
-    width: 50vw;
+    font-size: 1.2rem;
+    width: 40vw;
     display: flex;
     justify-content: center;
+
+    @include mobile{
+      width: 80vw;
+    }
 
     &__criteria {
       @include list_display();
@@ -42,7 +67,14 @@
         color: rgb(121, 121, 121);
       }
     }
-
   }
 
+  &__button {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
 }

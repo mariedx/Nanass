@@ -14,7 +14,7 @@ class ApiMacbooks {
       console.error(error);
       return {
         error: {
-          message: 'Erreur',
+          message: 'Une erreur s\'est produite lors de la récupération des données des macbooks',
         },
       };
     }
@@ -33,7 +33,7 @@ class ApiMacbooks {
       console.error(error);
       return {
         error: {
-          message: 'Erreur',
+          message: 'Une erreur s\'est produite lors de la récupération des données du macbook',
         },
       };
     }
