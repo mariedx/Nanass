@@ -6,6 +6,7 @@ import ApiAdmins from 'api/admins';
 import { loginAdmin } from 'store/users/userActions';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
+import ApiSessions from 'api/sessions';
 import styles from './form_signin_admin.module.scss';
 
 const FormSigninAdmin = () => {
@@ -40,6 +41,11 @@ const FormSigninAdmin = () => {
     if (signinAdminResult.error) {
       setErrorMessage(signinAdminResult.error.message);
       return;
+    }
+
+    if (signinAdminResult.customerId) {
+      setErrorMessage(`Vous êtes client ! Veuillez vous connectez depuis '${window.location.host}/registrations/signin'`);
+      await ApiSessions.logout({ token: signinAdminResult.token });
     }
 
     if (signinAdminResult.adminId) {

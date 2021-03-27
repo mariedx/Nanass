@@ -1,6 +1,28 @@
 import Layout from 'components/Layout';
 import SideBar from 'components/SideBar';
+import cookie from 'cookie';
+import config from 'config';
+import isJwtExpired from 'utils/jwt';
 import styles from './applications.module.scss';
+
+const getServerSideProps = ({ req }) => {
+  const cookieData = cookie.parse(req.headers.cookie || 'null');
+  const tokenKey = config.COOKIE_STORAGE_KEY_USER_TOKEN;
+  const token = cookieData[tokenKey];
+  const userDataKey = config.COOKIE_STORAGE_KEY_USER_DATA;
+  const userData = JSON.parse(cookieData[userDataKey]);
+
+  if (!token || isJwtExpired(token) || !userData.adminId) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return { props: {} };
+};
 
 const Applications = () => (
 
@@ -21,3 +43,4 @@ const Applications = () => (
 );
 
 export default Applications;
+export { getServerSideProps };

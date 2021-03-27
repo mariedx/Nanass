@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { loginCustomer } from 'store/users/userActions';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import ApiSessions from 'api/sessions';
 import styles from './formsignin.module.scss';
 
 const FormSignin = () => {
@@ -41,6 +42,11 @@ const FormSignin = () => {
     if (signinResult.error) {
       setErrorMessage(signinResult.error.message);
       return;
+    }
+
+    if (signinResult.adminId) {
+      setErrorMessage(`Vous êtes admin ! Veuillez vous connectez depuis '${window.location.host}/admin/login'`);
+      await ApiSessions.logout({ token: signinResult.token });
     }
 
     if (signinResult.customerId) {
