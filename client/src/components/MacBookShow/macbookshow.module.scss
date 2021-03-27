@@ -70,11 +70,20 @@
   }
 
   &__button {
-    padding-top: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
+    background-color:#61dfaa;
+    border-radius:8px;
+    border: none;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:17px;
+    padding:8px 15px;
+    text-decoration:none;
+    font-weight: bold;
+    outline: 0;
+    width: fit-content;
+
+    &:hover {
+      background-color:var(--color-primary-dark);
+    }
   }
 }

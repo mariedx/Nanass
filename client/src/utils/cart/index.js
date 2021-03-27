@@ -1,6 +1,6 @@
 import config from 'config';
 
-const key = config.LOCAL_STORAGE_KEY_PRODUCT;
+const key = config.LOCAL_STORAGE_KEY_PRODUCTS;
 
 const isInLocalStorage = () => {
   const cart = localStorage.getItem(key);
@@ -26,12 +26,26 @@ const setInLocalStorage = (products) => {
   localStorage.setItem(key, JSON.stringify(products));
 };
 
+const removeItem = (id) => {
+  const storageProducts = JSON.parse(localStorage.getItem(key));
+  const products = storageProducts.filter((product) => product.id !== id);
+  localStorage.setItem(key, JSON.stringify(products));
+};
+
+const addItem = (item) => {
+  const products = get();
+  const newProductsList = [...products, item];
+  localStorage.setItem(key, JSON.stringify(newProductsList));
+};
+
 const Cart = {
   isInLocalStorage,
   setEmptyCartInLocalStorage,
   get,
   size,
   setInLocalStorage,
+  removeItem,
+  addItem,
 };
 
 export default Cart;

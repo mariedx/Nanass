@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'components/Button';
-import Link from 'next/link';
+// import Link from 'next/link';
+import cart from 'utils/cart';
 import styles from './macbookshow.module.scss';
 
 const MacBookShow = ({ macbook }) => {
@@ -13,6 +14,7 @@ const MacBookShow = ({ macbook }) => {
     aspect,
     price,
     image_url: image,
+    id,
   } = macbook;
 
   return (
@@ -80,14 +82,16 @@ const MacBookShow = ({ macbook }) => {
         </div>
 
         <div className={styles.MacBookShow__button}>
-          <Link href="/purchase" passHref>
-            <Button
-              href="/purchase"
-              title="Ajouter au panier"
-              type="primary"
-            />
-          </Link>
+          <button type="button" onClick={() => cart.addItem(macbook)}> Ajoute moi au panier pliiiiiiz</button>
         </div>
+        <div className={styles.MacBookShow__button}>
+          <button type="button" onClick={() => cart.removeItem(id)}> Retire moi du panier pliiiiiiz</button>
+        </div>
+        <Button
+          href="/purchase"
+          title="Retour"
+          type="primary"
+        />
       </div>
     </>
   );
