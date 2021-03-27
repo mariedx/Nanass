@@ -11,8 +11,8 @@
   outline: 0;
 
   &:hover {
-    color:#4bd199;
-    border: 1px solid #4bd199;
+    color:var(--color-primary-dark);
+    border: 1px solid var(--color-primary-dark);
   }
 }
 
@@ -29,6 +29,6 @@
   outline: 0;
 
   &:hover {
-    background-color:#4bd199;
+    background-color:var(--color-primary-dark);
   }
 }
