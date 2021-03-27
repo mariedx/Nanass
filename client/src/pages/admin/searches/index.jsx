@@ -13,6 +13,8 @@ const Searches = () => (
         <SideBar href="./products" title="Gérer annonces ventes" />
         <SideBar href="./searches" title="Gérer recherches" />
         <SideBar href="./applications" title="Gérer candidatures" />
+        <SideBar href="./add-product" title="Ajouter un produit a la vente" />
+
       </div>
       <div className={styles.Searches__body}>
         <Link href="/purchase" passHref>
@@ -33,6 +35,7 @@ const Searches = () => (
             processor="1.7"
             ram="256"
             price="490"
+            image="https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           />
           <Button
             href="#"
