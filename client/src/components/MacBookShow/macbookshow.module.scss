@@ -13,7 +13,7 @@
 
 .MacBookShow {
   padding: 10vh 5vh;
-  
+
   &__title {
     padding-bottom: 3vh;
     display: flex;
@@ -23,17 +23,22 @@
   &__content {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 
     @include mobile{
       flex-direction: column;
+      align-items: center;
     }
-  }
 
-  &__image {
-    width: 50vw;
+    &__image {
+      max-width: 50vw;
+      max-height: 30vw;
+      object-fit: contain;
 
-    @include mobile{
-      width: 80vw;
+      @include mobile{
+        max-width: 80vw;
+        margin-bottom: 20px;
+      }
     }
   }
 
