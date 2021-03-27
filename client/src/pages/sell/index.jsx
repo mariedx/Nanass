@@ -14,9 +14,12 @@ const macbook = {
 
 const Sell = () => (
   <Layout title="VENDRE UN MACBOOK" subtitle="Donnez une seconde vie à votre ordinateur">
-    <div className={styles.sell}>
+    <div className={styles.Sell}>
       <CardMacBookSell macbook={macbook} />
-      <p>Vous souhaitez vendre un MacBook qui n&apos;apparaît pas dans la liste? Contactez-nous !</p>
+      <p>
+        Vous souhaitez vendre un MacBook qui n&apos;apparaît pas dans la liste?
+        <a href="/contact" className={styles.Sell__contact}> Contactez-nous !</a>
+      </p>
     </div>
   </Layout>
 );
