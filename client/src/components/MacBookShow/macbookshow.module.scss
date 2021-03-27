@@ -27,6 +27,7 @@
 
     @include mobile{
       flex-direction: column;
+      align-items: center;
     }
 
     &__image {
@@ -36,6 +37,7 @@
 
       @include mobile{
         max-width: 80vw;
+        margin-bottom: 20px;
       }
     }
   }
