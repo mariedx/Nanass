@@ -1,9 +1,17 @@
 .Concept {
-  background-color: aquamarine;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 
   &__title {
     text-align: center;
     color: var(--color-primary-dark);
     text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: 'Lato';
+    font-size: 1.5em;
   }
 }
