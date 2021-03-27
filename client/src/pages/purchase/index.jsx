@@ -62,28 +62,15 @@ const purchase = () => {
           {displayedMacbooks.length !== 0 && (
             displayedMacbooks.map((macbook) => {
               const {
-                model,
-                size,
-                year,
-                processor,
-                ram,
-                price,
                 serial_number,
                 id,
-                image_url,
               } = macbook;
               return (
                 <Link href={`macbooks/${id}`}>
                   <a>
                     <CardMacBook
-                      model={model}
-                      size={size}
-                      year={year}
-                      processor={processor}
-                      ram={ram}
-                      price={price}
+                      macbook={macbook}
                       key={serial_number}
-                      image={image_url}
                     />
                   </a>
                 </Link>
