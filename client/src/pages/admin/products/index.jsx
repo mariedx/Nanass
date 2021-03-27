@@ -5,9 +5,19 @@ import SideBar from 'components/SideBar';
 import Link from 'next/link';
 import styles from './products.module.scss';
 
+const exampleMacbook = {
+  model: 'Macbook Air',
+  size: '15',
+  year: 'mid-2015',
+  processor: '1.7',
+  ram: '256',
+  price: '490',
+  image_url: 'https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+};
+
 const Products = () => (
 
-  <Layout title="Gérer les annonces de produits en vente" subtitle="">
+  <Layout title="Gérer les produits en vente" subtitle="">
     <div className={styles.Products}>
       <div className={styles.Products__sidebar}>
         <SideBar href="./products" title="Gérer annonces ventes" />
@@ -24,17 +34,11 @@ const Products = () => (
           />
         </Link>
 
-        <h2 className={styles.Products__title}>Annonces en ligne</h2>
+        <h2 className={styles.Products__title}>Produits en vente</h2>
 
         <div className={styles.Products__card}>
           <CardMacBook
-            image="https://images.pexels.com/photos/5588490/pexels-photo-5588490.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            model="Macbook Air"
-            size="15"
-            year="mid-2015"
-            processor="1.7"
-            ram="256"
-            price="490"
+            macbook={exampleMacbook}
           />
           <Button
             href="#"
