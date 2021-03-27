@@ -10,6 +10,7 @@ const Applications = () => (
         <SideBar href="./products" title="Gérer annonces ventes" />
         <SideBar href="./searches" title="Gérer recherches" />
         <SideBar href="./applications" title="Gérer candidatures" />
+        <SideBar href="./addproduct" title="Ajouter un produit a la vente" />
       </div>
       <div className={styles.Applications__body}>
         <h2 className={styles.Applications__title}>Liste des candidatures</h2>
