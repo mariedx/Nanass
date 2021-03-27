@@ -147,11 +147,20 @@ const Navbar = () => {
           </Item>
           {currentUser.id && (
             <>
-              <Item>
-                <Link href="/user/profile">
-                  <a>Mon profil</a>
-                </Link>
-              </Item>
+              {currentUser.customerId && (
+                <Item>
+                  <Link href="/user/profile">
+                    <a>Mon profil</a>
+                  </Link>
+                </Item>
+              )}
+              {currentUser.adminId && (
+                <Item>
+                  <Link href="/admin/applications">
+                    <a>Mon espace admin</a>
+                  </Link>
+                </Item>
+              )}
               <ItemButton onClick={handleLogout}>
                 Déconnexion
               </ItemButton>
@@ -187,11 +196,20 @@ const Navbar = () => {
           </Item>
           {currentUser.id && (
             <>
-              <Item>
-                <Link href="/user/profile">
-                  <a>Mon profil</a>
-                </Link>
-              </Item>
+              {currentUser.customerId && (
+                <Item>
+                  <Link href="/user/profile">
+                    <a>Mon profil</a>
+                  </Link>
+                </Item>
+              )}
+              {currentUser.adminId && (
+                <Item>
+                  <Link href="/admin/applications">
+                    <a>Mon espace admin</a>
+                  </Link>
+                </Item>
+              )}
               <ItemButton onClick={handleLogout}>
                 Déconnexion
               </ItemButton>
