@@ -1,10 +1,34 @@
+@mixin mobile {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
 .Concept {
   padding-top: 50px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 80%;
   margin: 0 auto;
+  justify-content: space-between;
+
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+  &__image {
+    width: 38vw;
+
+  @include mobile{
+    padding-bottom: 1vh;
+  }
+  }
+
+  &__text {
+    width: 38vw;
+  }
 
   &__title {
     text-align: center;
