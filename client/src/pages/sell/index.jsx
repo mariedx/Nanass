@@ -13,7 +13,7 @@ const macbook = {
 };
 
 const Sell = () => (
-  <Layout title="VENDRE UN MACBOOK" subtitle="Donnez une seconde vie à votre ordinateur">
+  <Layout title="Vendre un MacBook" subtitle="Donnez une seconde vie à votre ordinateur">
     <div className={styles.Sell}>
       <CardMacBookSell macbook={macbook} />
       <p>
