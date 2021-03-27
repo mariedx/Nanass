@@ -68,7 +68,7 @@ const purchase = () => {
   }, [allMacbooks]);
 
   return (
-    <Layout title="ACHETER UN MACBOOK" subtitle="Tous nos produits sont garantis 12 mois !">
+    <Layout title="Acheter un MacBook" subtitle="Tous nos produits sont garantis 12 mois !">
       <div className={styles.Purchase}>
         <div className={styles.Purchase__searchbar}>
           <SearchBar
