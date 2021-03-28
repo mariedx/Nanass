@@ -38,8 +38,7 @@ const CartShow = () => {
             '0 €'
           )}
           {productsArray.length > 0 && (
-            'Bouh'
-          )}
+            productsArray.reduce((sum, product) => sum + Number(product.price), 5))}
           {' '}
           €
         </p>
@@ -50,6 +49,5 @@ const CartShow = () => {
     </div>
   );
 };
-// productsArray.reduce((total, currentProduct) => total + Number(currentProduct.price), shippingFee)
 
 export default CartShow;
