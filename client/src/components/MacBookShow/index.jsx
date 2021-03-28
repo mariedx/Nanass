@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Button from 'components/Button';
 // import Link from 'next/link';
 import cart from 'utils/cart';
@@ -16,6 +16,14 @@ const MacBookShow = ({ macbook }) => {
     image_url: image,
     id,
   } = macbook;
+
+  const [buttonValue, setButtonValue] = useState('add');
+
+  const handleButtonValue = () => {
+    if (buttonValue === 'add') { setButtonValue('retrieve'); } else {
+      setButtonValue('add');
+    }
+  };
 
   return (
     <>
@@ -82,12 +90,14 @@ const MacBookShow = ({ macbook }) => {
           </div>
         </div>
 
-        <div className={styles.MacBookShow__button}>
+        <button type="button" onClick={handleButtonValue}>
+          {buttonValue === 'add' && (
           <button type="button" onClick={() => cart.addItem(macbook)}> Ajoute moi au panier pliiiiiiz</button>
-        </div>
-        <div className={styles.MacBookShow__button}>
+          )}
+          {buttonValue === 'retrieve' && (
           <button type="button" onClick={() => cart.removeItem(id)}> Retire moi du panier pliiiiiiz</button>
-        </div>
+          )}
+        </button>
         <Button
           href="/purchase"
           title="Retour"

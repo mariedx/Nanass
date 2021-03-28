@@ -11,7 +11,6 @@ const CartShow = () => {
 
   useEffect(() => {
     const cartProducts = cart.get();
-    console.log(cartProducts[0].price);
     setProductsArray(cartProducts);
   }, []);
 
@@ -24,28 +23,27 @@ const CartShow = () => {
       </ul>
       <div className={styles.CartShow__space} />
       {productsArray.length === 0 && (
-        <p>Votre panier est vide</p>
+        <p className={styles.CartShow__emptycart}> Votre panier est vide</p>
       )}
       {productsArray.length > 0 && (
-        productsArray.map((product) => <CartProduct macbook={product} />)
+      <div>
+        {productsArray.map((product) => <CartProduct macbook={product} />)}
+
+        <div className={styles.CartShow__deliveryfees}>
+          <p>{`Frais de livraison : ${shippingFees} €`}</p>
+          <p>
+            Total :
+            {' '}
+            {productsArray.reduce((sum, product) => sum + Number(product.price), 5)}
+            {' '}
+            €
+          </p>
+        </div>
+        <div className={styles.CartShow__button}>
+          <Button href="/" type="primary" title="Livraison et paiement" />
+        </div>
+      </div>
       )}
-      <div className={styles.CartShow__deliveryfees}>
-        <p>{`Frais de livraison : ${shippingFees} €`}</p>
-        <p>
-          Total :
-          {' '}
-          {productsArray.length === 0 && (
-            '0 €'
-          )}
-          {productsArray.length > 0 && (
-            productsArray.reduce((sum, product) => sum + Number(product.price), 5))}
-          {' '}
-          €
-        </p>
-      </div>
-      <div className={styles.CartShow__button}>
-        <Button href="/" type="primary" title="Livraison et paiement" />
-      </div>
     </div>
   );
 };
