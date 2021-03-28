@@ -29,7 +29,7 @@ const product = ({ id }) => {
   }, []);
 
   return (
-    <Layout title="trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
+    <Layout title="Trouvez votre macbook" subtitle="Tous nos produits sont garantis 12 mois !">
       <MacBookShow
         macbook={theMacbook}
       />

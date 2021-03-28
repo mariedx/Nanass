@@ -16,7 +16,6 @@ class ApiSessions {
         message: 'La déconnexion réalisée avec succès !',
       };
     } catch (error) {
-      console.error(error);
       return {
         error: {
           message: 'Une erreur s\'est produite lors de la déconnexion',

@@ -20,7 +20,6 @@ const MacBookShow = ({ macbook }) => {
   const [buttonValue, setButtonValue] = useState('add');
 
   useEffect(() => {
-    console.log('USE EFFECT HERE', Cart.hasProduct(macbook));
     if (Cart.hasProduct(macbook)) {
       setButtonValue('retrieve');
     }

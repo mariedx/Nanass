@@ -1,12 +1,15 @@
 import Footer from 'components/Footer';
 import Navbar from 'components/Navbar';
+import Head from 'next/head';
 import styles from './layout.module.scss';
 
 const Layout = ({
   children, home, title, subtitle,
 }) => (
   <div className={styles.Layout}>
-
+    <Head>
+      <title>{home ? 'Nanass' : title}</title>
+    </Head>
     <main>
       {home && <Navbar />}
       {!home && (
