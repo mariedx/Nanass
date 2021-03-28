@@ -11,7 +11,7 @@ D'ailleurs, pourquoi Nanass ? Deux nanas expertes dans les ordinateurs mac qui v
 
 ## Le site en prod
 
-En raison d'une petite PLS, le parcours achat n'est à ce jours pas fonctionnel. Mais que cela ne vous empêche pas d'aller jeter un oeil (ou deux) au site, en cliquant [juste ici](https://nanass-client.herokuapp.com/) 😇
+En raison d'une petite PLS, le parcours achat n'est à ce jour pas fonctionnel. Mais que cela ne vous empêche pas d'aller jeter un oeil (ou deux) au site, en cliquant [juste ici](https://nanass-client.herokuapp.com/) 😇
 
 
 ## Les auteurs
