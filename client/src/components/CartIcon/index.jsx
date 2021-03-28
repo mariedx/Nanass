@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Cart from 'utils/cart';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './carticone.module.scss';
+import styles from './carticon.module.scss';
 
 const CartIcon = () => {
   useEffect(() => {
@@ -12,19 +12,17 @@ const CartIcon = () => {
   }, []);
 
   return (
-    <div className={styles.CartIcone}>
-      <Link href="/cart">
-        <a className={styles.Navbar__cart}>
-          <Image
-            priority
-            src="/images/cart.svg"
-            height={40}
-            width={40}
-            alt="Cart"
-          />
-        </a>
-      </Link>
-    </div>
+    <Link href="/cart">
+      <a className={styles.CartIcon}>
+        <Image
+          priority
+          src="/images/cart.svg"
+          height={40}
+          width={40}
+          alt="Cart"
+        />
+      </a>
+    </Link>
   );
 };
 
