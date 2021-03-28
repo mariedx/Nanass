@@ -1,6 +1,7 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'components/Button';
-import Link from 'next/link';
+// import Link from 'next/link';
+import Cart from 'utils/cart';
 import styles from './macbookshow.module.scss';
 
 const MacBookShow = ({ macbook }) => {
@@ -13,7 +14,26 @@ const MacBookShow = ({ macbook }) => {
     aspect,
     price,
     image_url: image,
+    id,
   } = macbook;
+
+  const [buttonValue, setButtonValue] = useState('add');
+
+  useEffect(() => {
+    if (Cart.hasProduct(macbook)) {
+      setButtonValue('retrieve');
+    }
+  }, []);
+
+  const handleAdd = () => {
+    Cart.addItem(macbook);
+    setButtonValue('retrieve');
+  };
+
+  const handleRetrieve = () => {
+    Cart.removeItem(id);
+    setButtonValue('add');
+  };
 
   return (
     <>
@@ -22,6 +42,7 @@ const MacBookShow = ({ macbook }) => {
           {model}
           {' '}
           {size}
+          &apos;
         </h3>
 
         <div className={styles.MacBookShow__content}>
@@ -78,15 +99,18 @@ const MacBookShow = ({ macbook }) => {
             </ul>
           </div>
         </div>
-
-        <div className={styles.MacBookShow__button}>
-          <Link href="/purchase" passHref>
-            <Button
-              href="/purchase"
-              title="Ajouter au panier"
-              type="primary"
-            />
-          </Link>
+        <div className={styles.MacBookShow__buttonSpace}>
+          <Button
+            href="/purchase"
+            title="Retour"
+            type="light"
+          />
+          {buttonValue === 'add' && (
+            <button type="button" className={styles.MacBookShow__button} onClick={handleAdd}> Ajoutez moi au panier</button>
+          )}
+          {buttonValue === 'retrieve' && (
+            <button type="button" className={styles.MacBookShow__button} onClick={handleRetrieve}> Retirez moi du panier</button>
+          )}
         </div>
       </div>
     </>

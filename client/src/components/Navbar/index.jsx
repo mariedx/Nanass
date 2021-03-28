@@ -9,9 +9,10 @@ import ApiSessions from 'api/sessions';
 import Cookies from 'js-cookie';
 import config from 'config';
 import { useRouter } from 'next/router';
+import CartIcon from 'components/CartIcon';
 
 const Nav = styled.nav`
-  padding: 20px 50px 20px 0px;
+  padding: 20px 50px;
   min-height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -20,6 +21,8 @@ const Nav = styled.nav`
 
 const Menu = styled.ul`
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
 
   li:nth-child(2) {
@@ -170,25 +173,28 @@ const Navbar = () => {
             </>
           )}
           {!currentUser.id && (
-            <>
-              <Item>
-                <Link href="/registrations/signin">
-                  <a>Connexion</a>
-                </Link>
-              </Item>
-              <Item>
-                <Link href="/registrations/signup">
-                  <a>Inscription</a>
-                </Link>
-              </Item>
-            </>
+          <>
+            <Item>
+              <Link href="/registrations/signin">
+                <a>Connexion</a>
+              </Link>
+            </Item>
+            <Item>
+              <Link href="/registrations/signup">
+                <a>Inscription</a>
+              </Link>
+            </Item>
+          </>
           )}
         </Menu>
-        <NavIcon onClick={() => toggleNav(!toggle)}>
-          <Line open={toggle} />
-          <Line open={toggle} />
-          <Line open={toggle} />
-        </NavIcon>
+        <div>
+          <CartIcon />
+          <NavIcon onClick={() => toggleNav(!toggle)}>
+            <Line open={toggle} />
+            <Line open={toggle} />
+            <Line open={toggle} />
+          </NavIcon>
+        </div>
       </Nav>
       <Overlay open={toggle}>
         <OverlayMenu open={toggle}>

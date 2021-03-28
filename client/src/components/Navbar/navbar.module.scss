@@ -1,6 +1,13 @@
 // $black: rgb(68, 67, 67);
 
-// .Navbar {
+.Navbar {
+  &__cart {
+    margin-right: 30px;
+  }
+
+  &__logo {
+    margin-left: 30px;
+  }
 //   display: flex;
 //   justify-content: space-between;
 //   padding: 20px 50px 20px 0px;
@@ -42,4 +49,4 @@
 
 //   }
 
-// }
+}

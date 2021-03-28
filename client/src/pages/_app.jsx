@@ -5,6 +5,7 @@ import { useStore } from 'store';
 
 const MyApp = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);
+
   return (
     <Provider store={store}>
       <Component {...pageProps} />

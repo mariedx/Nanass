@@ -17,7 +17,7 @@ const CardMacBookSell = ({ macbook }) => {
         <img src="https://i.pinimg.com/originals/20/12/b4/2012b42a4ea9a504786efaff5dab7f15.jpg" alt="MacBook" />
       </div>
       <p className={styles.CardMacBookSell_title}>
-        {`${model} ${size}`}
+        {`${model} ${size}'`}
       </p>
       <p className={styles.CardMacBookSell_body}>
         {`${year} - ${processor} - ${ram}`}
