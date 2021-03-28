@@ -69,6 +69,12 @@
     }
   }
 
+  &__buttonSpace {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px auto;
+  }
+
   &__button {
     background-color:#61dfaa;
     border-radius:8px;

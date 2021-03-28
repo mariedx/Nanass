@@ -4,7 +4,7 @@ const key = config.LOCAL_STORAGE_KEY_PRODUCTS;
 
 const isInLocalStorage = () => {
   const cart = localStorage.getItem(key);
-  return cart !== undefined;
+  return cart !== null;
 };
 
 const setEmptyCartInLocalStorage = () => {
@@ -49,6 +49,12 @@ const addItem = (item) => {
   localStorage.setItem(key, JSON.stringify(newProductsList));
 };
 
+const hasProduct = (item) => {
+  const products = get();
+  const isItemInCart = products.filter((product) => product['id'] === item.id);
+  return isItemInCart.length !== 0;
+};
+
 const Cart = {
   isInLocalStorage,
   setEmptyCartInLocalStorage,
@@ -58,6 +64,7 @@ const Cart = {
   setInLocalStorage,
   removeItem,
   addItem,
+  hasProduct,
 };
 
 export default Cart;

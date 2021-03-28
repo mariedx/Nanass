@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from 'components/Button';
 // import Link from 'next/link';
-import cart from 'utils/cart';
+import Cart from 'utils/cart';
 import styles from './macbookshow.module.scss';
 
 const MacBookShow = ({ macbook }) => {
@@ -19,10 +19,21 @@ const MacBookShow = ({ macbook }) => {
 
   const [buttonValue, setButtonValue] = useState('add');
 
-  const handleButtonValue = () => {
-    if (buttonValue === 'add') { setButtonValue('retrieve'); } else {
-      setButtonValue('add');
+  useEffect(() => {
+    console.log('USE EFFECT HERE', Cart.hasProduct(macbook));
+    if (Cart.hasProduct(macbook)) {
+      setButtonValue('retrieve');
     }
+  }, []);
+
+  const handleAdd = () => {
+    Cart.addItem(macbook);
+    setButtonValue('retrieve');
+  };
+
+  const handleRetrieve = () => {
+    Cart.removeItem(id);
+    setButtonValue('add');
   };
 
   return (
@@ -89,20 +100,19 @@ const MacBookShow = ({ macbook }) => {
             </ul>
           </div>
         </div>
-
-        <button type="button" onClick={handleButtonValue}>
+        <div className={styles.MacBookShow__buttonSpace}>
+          <Button
+            href="/purchase"
+            title="Retour"
+            type="light"
+          />
           {buttonValue === 'add' && (
-          <button type="button" onClick={() => cart.addItem(macbook)}> Ajoute moi au panier pliiiiiiz</button>
+            <button type="button" className={styles.MacBookShow__button} onClick={handleAdd}> Ajoutez moi au panier</button>
           )}
           {buttonValue === 'retrieve' && (
-          <button type="button" onClick={() => cart.removeItem(id)}> Retire moi du panier pliiiiiiz</button>
+            <button type="button" className={styles.MacBookShow__button} onClick={handleRetrieve}> Retirez moi du panier</button>
           )}
-        </button>
-        <Button
-          href="/purchase"
-          title="Retour"
-          type="primary"
-        />
+        </div>
       </div>
     </>
   );

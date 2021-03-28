@@ -8,6 +8,7 @@ import { logout } from 'store/users/userActions';
 import ApiSessions from 'api/sessions';
 import Cookies from 'js-cookie';
 import config from 'config';
+import CartIcon from 'components/CartIcone';
 import styles from './navbar.module.scss';
 
 const Nav = styled.nav`
@@ -176,17 +177,7 @@ const Navbar = () => {
           )}
         </Menu>
         <div>
-          <Link href="/cart">
-            <a className={styles.Navbar__cart}>
-              <Image
-                priority
-                src="/images/cart.svg"
-                height={40}
-                width={40}
-                alt="Cart"
-              />
-            </a>
-          </Link>
+          <CartIcon />
           <NavIcon onClick={() => toggleNav(!toggle)}>
             <Line open={toggle} />
             <Line open={toggle} />
