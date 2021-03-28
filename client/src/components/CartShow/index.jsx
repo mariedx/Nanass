@@ -50,6 +50,6 @@ const CartShow = () => {
     </div>
   );
 };
-// productsArray.reduce((total, currentProduct) => total + currentProduct.price, shippingFee)
+// productsArray.reduce((total, currentProduct) => total + Number(currentProduct.price), shippingFee)
 
 export default CartShow;

@@ -17,7 +17,7 @@ const CardMacBook = ({ macbook }) => {
         <img src={image} alt="MacBook" />
       </div>
       <p className={styles.CardMacBook__title}>
-        {`${model} ${size}`}
+        {`${model} ${size}'`}
       </p>
       <p className={styles.CardMacBook__body}>
         {`${year} - ${processor} - ${ram}`}

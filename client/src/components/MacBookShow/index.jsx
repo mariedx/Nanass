@@ -24,6 +24,7 @@ const MacBookShow = ({ macbook }) => {
           {model}
           {' '}
           {size}
+          &apos;
         </h3>
 
         <div className={styles.MacBookShow__content}>
