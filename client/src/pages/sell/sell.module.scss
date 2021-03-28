@@ -1,0 +1,9 @@
+.Sell {
+  text-align: center;
+
+  &__contact {
+    &:hover {
+      color: var(--color-primary-dark);
+    }
+  }
+}

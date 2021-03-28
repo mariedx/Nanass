@@ -1,0 +1,95 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin list_display {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.MacBookShow {
+  padding: 10vh 5vh;
+
+  &__title {
+    padding-bottom: 3vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @include mobile{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__image {
+      max-width: 50vw;
+      max-height: 30vw;
+      object-fit: contain;
+
+      @include mobile{
+        max-width: 80vw;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__lists {
+    font-size: 1.2rem;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+
+    @include mobile{
+      width: 80vw;
+    }
+
+    &__criteria {
+      @include list_display();
+        li {
+          font-family: 'Lato';
+        }
+    }
+
+    &__data {
+      @include list_display();
+      li {
+        font-family: 'Lato';
+        text-align: right;
+        color: rgb(121, 121, 121);
+      }
+    }
+  }
+
+  &__buttonSpace {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px auto;
+  }
+
+  &__button {
+    background-color:#61dfaa;
+    border-radius:8px;
+    border: none;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:17px;
+    padding:8px 15px;
+    text-decoration:none;
+    font-weight: bold;
+    outline: 0;
+    width: fit-content;
+
+    &:hover {
+      background-color:var(--color-primary-dark);
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.RegisInput{
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 30vw;
+  height: 35px;
+  padding-left: 15px;
+  border: 1px solid #abd6be;
+  background-color: #edf8f2;
+  margin-bottom: 20px;
+
+  &:hover, &:focus {
+    border: 1px solid #7aaa90;
+    transition: border, background-color 200ms linear;
+    outline:0;
+  }
+
+  &__title{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 15px;
+  }
+
+  @include mobile{
+    width: 50vw;
+  }
+}
+

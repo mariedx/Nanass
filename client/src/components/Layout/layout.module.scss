@@ -1,0 +1,30 @@
+.Layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Header {
+  background-color: #b8e7d3;
+  text-align: center;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index: -1;
+  padding-bottom: 20px;
+
+  &__title {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5vh;
+  }
+
+  &__subtitle {
+    color: white;
+    font-family: 'Lato';
+    font-size: 1.75em;
+
+  }
+}

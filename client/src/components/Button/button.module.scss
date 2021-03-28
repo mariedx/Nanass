@@ -1,0 +1,35 @@
+.light {
+  background-color: white;
+	border-radius:8px;
+	border: 1px solid #61dfaa;
+	cursor:pointer;
+	color:#61dfaa;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+  font-weight: bold;
+  outline: 0;
+
+  &:hover {
+    color:var(--color-primary-dark);
+    border: 1px solid var(--color-primary-dark);
+  }
+}
+
+.primary {
+  background-color:#61dfaa;
+	border-radius:8px;
+	border: none;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	padding:8px 15px;
+	text-decoration:none;
+  font-weight: bold;
+  outline: 0;
+	margin-top: 50px;
+
+  &:hover {
+    background-color:var(--color-primary-dark);
+  }
+}

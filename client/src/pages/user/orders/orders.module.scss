@@ -1,0 +1,43 @@
+@mixin mobile {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+.Orders {
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+
+  @include mobile{
+    flex-direction: column;
+
+    &__body {
+    min-width: 100%;
+    border-left: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 4%;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+  }
+
+  &__body {
+    margin-bottom: 5%;
+    width: 80%;
+    border-left: 1px solid black;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    margin-top: 2%;
+  }
+}

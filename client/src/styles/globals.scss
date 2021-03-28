@@ -1,16 +1,48 @@
+@import './variables.scss';
+@import 'public/fonts/fonts.scss';
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  color: var(--color-text);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
+
+
+////////  TITLE SIZE /////////
+@for $i from 1 through 6 {
+  h#{7 - $i} {
+      font-size: 2.4em / 6 * $i;
+      font-family: 'Lato', sans-serif;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+

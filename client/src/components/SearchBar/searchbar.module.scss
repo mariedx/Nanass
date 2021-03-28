@@ -1,0 +1,27 @@
+.SearchBar {
+  display: flex;
+  border-radius: 20px;
+  border-width: 1.5px;
+  margin: 20px auto;
+  width: 350px;
+  height: 40px;
+  background-color: var(--color-secondary);
+  border-color: var(--color-text);
+  padding-left: 15px;
+
+  &__icon {
+    filter: invert(65%) sepia(77%) saturate(300%) hue-rotate(103deg) brightness(93%) contrast(95%);
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background-color: inherit;
+    width: 80%;
+    margin-left: 15px;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@mixin mobile {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+.Concept {
+  padding-top: 50px;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+
+  @include mobile{
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+
+  &__image {
+    width: 38vw;
+
+  @include mobile{
+    padding-bottom: 1vh;
+  }
+  }
+
+  &__text {
+    width: 38vw;
+  }
+
+  &__title {
+    text-align: center;
+    color: var(--color-primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
