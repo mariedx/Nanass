@@ -20,10 +20,9 @@ const Contact = () => {
       config.EMAIL_JS_USER,
     )
       .then((result) => {
-        console.log(result);
         setSuccessMessage('Votre message a bien été envoyé !');
       }, (error) => {
-        console.log(error.text);
+        console.error(error.text);
       });
   };
 

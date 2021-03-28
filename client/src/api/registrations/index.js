@@ -51,8 +51,6 @@ class ApiRegistrations {
         },
       });
 
-      console.log('Api signup', response);
-
       const token = response.headers.authorization.split('Bearer ')[1];
       const { data } = response.data;
 

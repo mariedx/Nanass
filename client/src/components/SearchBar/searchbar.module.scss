@@ -1,36 +1,27 @@
 .SearchBar {
+  display: flex;
+  border-radius: 20px;
+  border-width: 1.5px;
+  margin: 20px auto;
+  width: 350px;
+  height: 40px;
+  background-color: var(--color-secondary);
+  border-color: var(--color-text);
+  padding-left: 15px;
+
+  &__icon {
+    filter: invert(65%) sepia(77%) saturate(300%) hue-rotate(103deg) brightness(93%) contrast(95%);
+  }
 
   &__input {
-    border-radius: 20px;
-    border-width: 1.5px;
-    margin-right: 10px;
-    width: 350px;
-    height: 30px;
-    background-color: var(--color-secondary);
-    border-color: var(--color-text);
-    padding-left: 15px;
-  }
-
-  &__input:focus {
-    outline: 0;
-  }
-
-  &__button {
-    background-color: var(--color-primary);
-    border-radius: 5px;
     border: none;
-    height: 30px;
-    width: 100px;
-    padding: 2px;
-    color: white;
-  }
+    outline: none;
+    background-color: inherit;
+    width: 80%;
+    margin-left: 15px;
 
-  &__button:focus {
-    outline: 0;
-  }
-
-  &__button:hover {
-    background-color: #72e4b4;
-    cursor: pointer;
+    &:focus {
+      outline: 0;
+    }
   }
 }

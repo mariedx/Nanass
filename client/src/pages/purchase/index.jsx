@@ -5,7 +5,8 @@ import CardMacBook from 'components/CardMacBook';
 import Layout from 'components/Layout';
 import SearchBar from 'components/SearchBar';
 import Link from 'next/link';
-import styles from './purchaseMacBook.module.scss';
+import Image from 'next/image';
+import styles from './purchase.module.scss';
 
 const getMacbookTitle = (macbook) => {
   const {
@@ -22,6 +23,7 @@ const purchase = () => {
   const [allMacbooks, setAllMacbooks] = useState([]);
   const [displayedMacbooks, setDisplayedMacbooks] = useState([]);
   const [searchInput, setSearchInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateSearchInput = (value) => {
     setSearchInput(value);
@@ -49,11 +51,13 @@ const purchase = () => {
   }, [searchInput]);
 
   useEffect(async () => {
+    setIsLoading(true);
     if (errorMessage !== '') {
       setErrorMessage('');
     }
 
     const result = await ApiMacbooks.getAllMacbooks();
+    setIsLoading(false);
 
     if (result.error) {
       setErrorMessage(result.error.message);
@@ -76,7 +80,20 @@ const purchase = () => {
             keyword={searchInput}
           />
         </div>
-        <p className={styles.Purchase__errorMessage}>{errorMessage}</p>
+        {isLoading && (
+          <div className={styles.Purchase__loading}>
+            <Image
+              loading="eager"
+              src="/images/loading.gif"
+              alt="Nanass loading"
+              height={50}
+              width={50}
+            />
+          </div>
+        )}
+        {errorMessage && (
+          <p className={styles.Purchase__errorMessage}>{errorMessage}</p>
+        )}
         <div className={styles.Purchase__list}>
           {displayedMacbooks.length !== 0 && (
             displayedMacbooks.map((macbook) => {

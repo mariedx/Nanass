@@ -8,13 +8,12 @@
   border-radius: 5px;
   margin-right: 10px;
   padding-left: 15px;
-  border: 1px solid grey;
-  background-color: rgb(250, 249, 249);
+  border: 1px solid #abd6be;
+  background-color: #edf8f2;
   margin-bottom: 20px;
 
   &:hover, &:focus {
-    border: 1.75px solid rgb(65, 65, 65);
-    background-color: rgb(235, 235, 235);
+    border: 1px solid #7aaa90;
     transition: border, background-color 200ms linear;
     outline:0;
   }
@@ -74,6 +73,7 @@
   &__textarea {
     @include input_style();
     font-family: inherit;
+    padding-top: 10px;
   }
 
   label{
