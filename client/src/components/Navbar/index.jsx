@@ -10,6 +10,7 @@ import Cookies from 'js-cookie';
 import config from 'config';
 import { useRouter } from 'next/router';
 import CartIcon from 'components/CartIcon';
+import styles from './navbar.module.scss';
 
 const Nav = styled.nav`
   padding: 20px 50px;
@@ -187,7 +188,7 @@ const Navbar = () => {
           </>
           )}
         </Menu>
-        <div>
+        <div className={styles.Navbar__iconSpace}>
           <CartIcon />
           <NavIcon onClick={() => toggleNav(!toggle)}>
             <Line open={toggle} />

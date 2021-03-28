@@ -51,7 +51,7 @@ const addItem = (item) => {
 
 const hasProduct = (item) => {
   const products = get();
-  const isItemInCart = products.filter((product) => product['id'] === item.id);
+  const isItemInCart = products.filter((product) => product.id === item.id);
   return isItemInCart.length !== 0;
 };
 
