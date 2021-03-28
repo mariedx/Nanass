@@ -1,47 +1,52 @@
-$black: rgb(68, 67, 67);
+// $black: rgb(68, 67, 67);
 
 .Navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px 20px 0px;
-  align-items: center;
-  height: 10vh;
-
-  ul {
-    list-style: none;
+  &__iconSpace {
+    display: flex;
   }
 
-
-
-  &__right {
-
-    li {
-      float: left;
-      justify-content: space-between;
-
-      a {
-        text-decoration: none;
-        background-image: linear-gradient($black, white);
-        background-position: 0% 90%;
-        background-repeat: no-repeat;
-        background-size: 0% 2px;
-        transition: background-size .3s;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-
-      a:hover, a:focus {
-          background-size: 100% 2px;
-      }
-    }
+  &__logo {
+    margin-left: 30px;
   }
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 20px 50px 20px 0px;
+//   align-items: center;
+//   height: 10vh;
 
-  &__link {
-    width: 15%;
-    padding: 15px 10px;
-    margin: 5px;
-    color: $black;
+//   ul {
+//     list-style: none;
+//   }
 
-  }
+//   &__right {
+
+//     li {
+//       float: left;
+//       justify-content: space-between;
+
+//       a {
+//         text-decoration: none;
+//         background-image: linear-gradient($black, white);
+//         background-position: 0% 90%;
+//         background-repeat: no-repeat;
+//         background-size: 0% 2px;
+//         transition: background-size .3s;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//       }
+
+//       a:hover, a:focus {
+//           background-size: 100% 2px;
+//       }
+//     }
+//   }
+
+//   &__link {
+//     width: 15%;
+//     padding: 15px 10px;
+//     margin: 5px;
+//     color: $black;
+
+//   }
 
 }

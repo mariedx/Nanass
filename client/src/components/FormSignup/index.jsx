@@ -1,6 +1,11 @@
-import Input from 'components/Input';
+import Input from 'components/RegisInput';
 import { useState } from 'react';
-import Button from 'components/Button';
+import Link from 'next/link';
+import ApiRegistrations from 'api/registrations';
+import ApiCustomers from 'api/customers';
+import { useRouter } from 'next/router';
+import { useDispatch } from 'react-redux';
+import { loginCustomer } from 'store/users/userActions';
 import styles from './formsignup.module.scss';
 
 const FormSignup = () => {
@@ -9,13 +14,20 @@ const FormSignup = () => {
   const [lastNameValue, setLastNameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  const redirectHome = () => {
+    router.push('/');
+  };
 
   const handleEmail = (e) => {
     setEmailValue(e.target.value);
   };
 
   const handleFirstName = (e) => {
-    setFirstNameValue(e.targer.value);
+    setFirstNameValue(e.target.value);
   };
 
   const handleLastName = (e) => {
@@ -30,8 +42,63 @@ const FormSignup = () => {
     setConfirmPasswordValue(e.target.value);
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (errorMessage) {
+      setErrorMessage('');
+    }
+    const signupResult = await ApiRegistrations.signup({
+      email: emailValue,
+      password: passwordValue,
+      passwordConfirmation: confirmPasswordValue,
+    });
+
+    if (signupResult.error) {
+      setErrorMessage(signupResult.error.message);
+      return;
+    }
+
+    const {
+      token,
+      id,
+      email,
+    } = signupResult;
+
+    const customerResult = await ApiCustomers.create({
+      token,
+      userId: id,
+      firstName: firstNameValue,
+      lastName: lastNameValue,
+    });
+
+    if (customerResult.error) {
+      setErrorMessage(customerResult.error.message);
+      return;
+    }
+
+    const {
+      id: customerId,
+      first_name: firstName,
+      last_name: lastName,
+    } = customerResult;
+
+    dispatch(loginCustomer({
+      id,
+      email,
+      firstName,
+      lastName,
+      customerId,
+    }, token));
+
+    redirectHome();
+  };
+
   return (
-    <div className={styles.FormSignup}>
+    <form
+      className={styles.FormSignup}
+      onSubmit={handleSubmit}
+    >
       <Input
         title="Email"
         type="registration"
@@ -55,25 +122,35 @@ const FormSignup = () => {
       />
       <Input
         title="Mot de passe"
-        type="registration"
+        type="password"
         handleChange={handlePassword}
         value={passwordValue}
         placeholder="Mot de passe"
       />
       <Input
         title="Confirmation du mot de passe"
-        type="registration"
+        type="password"
         handleChange={handlePasswordConfirm}
         value={confirmPasswordValue}
         placeholder="Confirmation du mot de passe"
       />
       <br />
       <br />
-      <Button
-        title="S'enregistrer"
-        type="primary"
-      />
-    </div>
+      <button
+        type="submit"
+        className={styles.FormSignup__button}
+        onSubmit={handleSubmit}
+      >
+        S&apos;inscrire
+      </button>
+      <br />
+      <Link href="/registrations/signin">
+        <a className={styles.FormSignup__signinLink}>Déjà un compte ? Connectez-vous.</a>
+      </Link>
+      {errorMessage && (
+        <p className={styles.FormSignup__error}>{errorMessage}</p>
+      )}
+    </form>
   );
 };
 
