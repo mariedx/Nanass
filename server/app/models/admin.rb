@@ -11,7 +11,8 @@ class Admin < ApplicationRecord
   private
 
   def abort_if_already_admin
-    if user.customer?
+    is_user_admin = Admin.all.select{ |admin| admin[:user_id] == user.id }.any?
+    if is_user_admin
       errors.add(:user, 'the user is already an admin')
       throw(:abort)
     end
