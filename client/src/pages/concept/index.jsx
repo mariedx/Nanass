@@ -18,17 +18,17 @@ const Concept = () => (
         </p>
         <p className={styles.Concept__title}>Responsable</p>
         <p>
-          Chaque année, des millions de Mac sont vendus à travvers le monde.
+          Chaque année, des millions de Mac sont vendus à travers le monde.
           Chez Nanass, nous nous sommes fixés une mission :
           réparer un produit existant et le remettre en état, plutôt qu&apos;en produire un nouveau.
-          La planète, ainsi que votre budget, vous remercierons !
+          La planète, ainsi que votre budget, vous remercieront !
         </p>
         <p className={styles.Concept__title}>Local</p>
         <p>
           Chez Nanass, nous sommes persuadés que près des yeux, près du coeur !
           C&apos;est pourquoi nous travaillons avec des réparateurs situés en Ile-deFrance,
           à proximité de nos locaux. Nous mettons tout en oeuvre pour limiter
-          au maximum les deplacements inutils et centraliser tous nos prestataires.
+          au maximum les deplacements inutiles et centraliser tous nos prestataires.
         </p>
         <p className={styles.Concept__title}>Confiance</p>
         <p>
