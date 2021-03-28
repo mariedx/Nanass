@@ -12,7 +12,6 @@ const SearchBar = ({ handleChange, keyword }) => (
           onChange={(e) => handleChange(e.target.value)}
         />
       </label>
-      <input type="submit" value="Rechercher" className={styles.SearchBar__button} />
     </form>
   </div>
 );
