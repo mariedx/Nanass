@@ -71,7 +71,7 @@ const Profile = () => (
           />
           <div className={styles.Profile__form__button}>
             <Button
-              title="valider"
+              title="Valider"
               type="primary"
               href="#"
             />

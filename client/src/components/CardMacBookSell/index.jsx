@@ -23,7 +23,7 @@ const CardMacBookSell = ({ macbook }) => {
         {`${year} - ${processor} - ${ram}`}
       </p>
       <Button
-        href="#"
+        href="/contact"
         title="Postuler"
         type="primary"
       />

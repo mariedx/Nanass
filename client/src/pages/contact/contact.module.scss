@@ -74,6 +74,7 @@
     @include input_style();
     font-family: inherit;
     padding-top: 10px;
+    min-height: 100px;
   }
 
   label{
