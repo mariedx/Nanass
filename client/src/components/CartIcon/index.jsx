@@ -12,19 +12,17 @@ const CartIcon = () => {
   }, []);
 
   return (
-    <div className={styles.CartIcon}>
-      <Link href="/cart">
-        <a className={styles.Navbar__cart}>
-          <Image
-            priority
-            src="/images/cart.svg"
-            height={40}
-            width={40}
-            alt="Cart"
-          />
-        </a>
-      </Link>
-    </div>
+    <Link href="/cart">
+      <a className={styles.CartIcon}>
+        <Image
+          priority
+          src="/images/cart.svg"
+          height={40}
+          width={40}
+          alt="Cart"
+        />
+      </a>
+    </Link>
   );
 };
 
