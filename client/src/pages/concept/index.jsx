@@ -26,7 +26,7 @@ const Concept = () => (
         <p className={styles.Concept__title}>Local</p>
         <p>
           Chez Nanass, nous sommes persuadés que près des yeux, près du coeur !
-          C&apos;est pourquoi nous travaillons avec des réparateurs situés en Ile-deFrance,
+          C&apos;est pourquoi nous travaillons avec des réparateurs situés en Ile-de-France,
           à proximité de nos locaux. Nous mettons tout en oeuvre pour limiter
           au maximum les deplacements inutiles et centraliser tous nos prestataires.
         </p>

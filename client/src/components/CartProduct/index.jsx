@@ -25,7 +25,7 @@ const CartProduct = ({ macbook }) => {
           </Link>
         </li>
         <li>
-          {`${model} ${size}`}
+          {`${model} ${size}'`}
         </li>
         <li>
           {`${price} €`}
