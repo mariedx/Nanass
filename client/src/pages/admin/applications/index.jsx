@@ -9,10 +9,20 @@ const getServerSideProps = ({ req }) => {
   const cookieData = cookie.parse(req.headers.cookie || 'null');
   const tokenKey = config.COOKIE_STORAGE_KEY_USER_TOKEN;
   const token = cookieData[tokenKey];
+
+  if (!token || isJwtExpired(token)) {
+    return {
+      redirect: {
+        destination: '/admin/login',
+        permanent: false,
+      },
+    };
+  }
+
   const userDataKey = config.COOKIE_STORAGE_KEY_USER_DATA;
   const userData = JSON.parse(cookieData[userDataKey]);
 
-  if (!token || isJwtExpired(token) || !userData.adminId) {
+  if (!userData.adminId) {
     return {
       redirect: {
         destination: '/',
