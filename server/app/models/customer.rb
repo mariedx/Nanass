@@ -14,7 +14,8 @@ class Customer < ApplicationRecord
   private
 
   def abort_if_already_customer
-    if user.customer?
+    is_user_customer = Customer.all.select{ |customer| customer[:user_id] == user.id }.any?
+    if is_user_customer
       errors.add(:user, 'the user is already a customer')
       throw(:abort)
     end
