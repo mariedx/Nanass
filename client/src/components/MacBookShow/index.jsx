@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Button from 'components/Button';
-// import Link from 'next/link';
 import Cart from 'utils/cart';
 import styles from './macbookshow.module.scss';
 
@@ -23,7 +22,7 @@ const MacBookShow = ({ macbook }) => {
     if (Cart.hasProduct(macbook)) {
       setButtonValue('retrieve');
     }
-  }, []);
+  }, [macbook]);
 
   const handleAdd = () => {
     Cart.addItem(macbook);
